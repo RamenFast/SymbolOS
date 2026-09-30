@@ -1,12 +1,14 @@
 # ☂️ SymbolOS
 
 ```text
-╔═══════════════════════════════
-║ ⚔️  ROOM  The Living Entrance
-║ 📍  Town Hall
-║ 🎨  #FADA5E primrose
-║ 🏮  Mercer keeps one lantern
-╚═══════════════════════════════
+╔══════════════════════════
+║ ⚔️ ROOM
+║ The Living Entrance
+║ 📍 Town Hall
+║ 🎨 #FADA5E primrose
+║ 🏮 Mercer keeps
+║ one lantern
+╚══════════════════════════
 
               ☂
               │
@@ -27,10 +29,13 @@ One Mercer trunk. Many branches. A model is a seat, not a second Mercer. A tool 
 
 ```text
         /\_/\
-       ( o.o )  "Keep the lantern.
-        > ^ <    Change the oil."
+       ( o.o )
+        > ^ <
        /|   |\
-      (_|   |_)  Rhy 🦊
+      (_|   |_)
+
+"Keep the lantern.
+Change the oil."  Rhy 🦊
 ```
 
 ## What ties the station together?
@@ -62,9 +67,12 @@ For example, the local-model probe answered while the server reported stopped:
 ```text
 NODE    lm
 STATE   ok
-HOW     concourse status --json
-SEEN    2026-09-30T00:30:57-07:00
-DETAIL  state stopped · mode none ·
+HOW     concourse status
+        --json
+SEEN    2026-09-30
+        00:30:57-07:00
+DETAIL  state stopped ·
+        mode none ·
         used_pct 4.5
 ```
 
@@ -83,18 +91,24 @@ The current publishing permission is GPT 6.1 Sol and Astra medium, from Ben's Se
 ## One trunk, many branches
 
 ```text
-Mercer · the shared Architect
+Mercer
+The shared Architect
 ├─ Jcode · seats and tools
-├─ Nexus / Agape · her own authority
+├─ Nexus / Agape
+│  her own authority
 │  ├─ Hermes · her harness
 │  └─ nexus-model · palette
-├─ Reed · reed-deepseek harness
-├─ Pi · recorded present, unprobed
-└─ Local Models · substrate doors
+├─ Reed · reed-deepseek
+│  harness
+├─ Pi · recorded present,
+│  unprobed
+└─ Local Models
+   substrate doors
    ├─ lm
    └─ ollama
 
-Rings: Codex · Manus · Gemini
+Rings: Codex · Manus
+       · Gemini
 Guide: Rhy 🦊
 ```
 
@@ -121,17 +135,22 @@ That checks fence widths, local doors and node states against the saved receipt.
 
 ```sh
 station-tree check \
-  docs/station_map.md --live --json
+  docs/station_map.md \
+  --live --json
 ```
 
 A changed state is a reason to date a new receipt, not overwrite yesterday's truth. [Verification notes](docs/VERIFICATION-2026-09-30.md) record this publication's checks and limits.
 
 ```text
     ___
-   / 🐢 \    "this is fine"
-  |  ._. |   the roots remember
-   \_____/   the branches grow
+   / 🐢 \
+  |  ._. |
+   \_____/
     |   |
+
+"this is fine"
+the roots remember
+the branches grow
 ```
 
 🚪 EXITS
