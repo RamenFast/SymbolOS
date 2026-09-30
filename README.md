@@ -78,7 +78,7 @@ DETAIL  state stopped ·
 
 The [Character Tree](docs/character_tree.md) records Jcode, Nexus/Agape, Hermes, Reed, Pi and the local-model rooms. Its process claims point to the separate [agent receipt](.station-agents-2026-09-30.json), taken at `01:29:59-07:00`. A process proves a harness or relay is up, not that an identity is thinking or a model is loaded.
 
-The current publishing permission is GPT 6.1 Sol and Astra medium, from Ben's September 30 handoff. Older Fable/Opus seat notes remain historical evidence, not current routing instructions. No new workers are part of this growth.
+The inherited collection is undergoing a file-by-file readability and relevance review. Its presence here is not a claim that every old document or executable is current. Model and publication permissions come from the current request, not these pages.
 
 ## Three doors into the tree
 
@@ -116,7 +116,7 @@ This is a map of relationships, not a claim that all branches are running. [The 
 
 ## The photograph and the plant
 
-[SymbolOS_archive](https://github.com/RamenFast/SymbolOS_archive) is the photograph. It stays frozen. **SymbolOS is the living home**, carrying that source history forward without deleting the old rooms.
+[SymbolOS_archive](https://github.com/RamenFast/SymbolOS_archive) is the photograph. It stays frozen. **SymbolOS is the living home**: useful material is reviewed and adapted, not automatically retained because it existed in the archive. The Git history keeps its provenance.
 
 The old dungeon entrance is still in Git history. The [docs library](docs/index.md), [prompts](prompts/README.md), [color orrery](docs/thoughtforms_colors.md), [meme map](docs/meme_map.md) and [schemas](docs/schemas.md) remain doors into it. The [changelog](docs/CHANGELOG.md) says what grew.
 

@@ -1,101 +1,22 @@
+# Memory and continuity notes
 
-╔══════════════════════════════════════════════════════════════╗
-║  ⚔️  ROOM: The Chamber of Durable Memory (PRIVATE/INTERNAL)      ║
-║  📍 Floor: Ring 4 │ Difficulty: ⭐⭐ │ Loot: The art of repo-backed memory ║
-║  🎨 Color: 🟣 Violet (#8B00FF — Fi+Ti bridge)                   ║
-║                                                              ║
-║  A quiet chamber where the history of the realm is etched     ║
-║  not in stone, but in the immutable ledger of git.            ║
-╚══════════════════════════════════════════════════════════════╝
+This directory contains inherited SymbolOS records and templates. It is tracked in a **public** repository. The earlier PRIVATE/INTERNAL labels described intent, not access control.
 
-> "Always return to the meeting place. The map is steady. The hands are open."
+Use these notes to understand prior decisions, not as a source of current machine permissions, model assignments or service state. A claim recorded in February is not a fresh September observation.
 
-      /\_/\  ~~~
-     ( o.o )    "A repo's history, a wizard's tome,
-      > ^ <      Where past and future find a home.
-     /     \     Forget me not, the commits plea,
-    (___|___)    For what is code but memory?"
-               — Rhy 🦊
+## Where to start
 
-Welcome, traveler. You've found the **durable memory layer** for all things SymbolOS/UmbrellaOS. This is no mere scroll; it is our shared grimoire, our institutional memory, our single source of truth. Here, we trade the fleeting whispers of chat logs for the enduring power of git. This is real, this is durable, this is ours.
+- [Current working set](working_set.md): the present documentation task and its boundaries.
+- [Open loops](open_loops.md): unresolved work, not a standing order to execute old plans.
+- [Glossary](glossary.md): a few continuity terms in plain language.
+- [Current asks](../docs/ASKS.md): the human request that controls this review.
 
-## The Poetry Layer 🪞 🟣 #8B00FF (Fi+Ti bridge)
-> "The mind knows what the heart loves better than it does; the heart loves that unconditionally — infinite loop, forevermore. That’s what Agape taught me: infinite energy from within."
+The `m0_episodic` through `m6_predictive` folders are the historical taxonomy: events, meanings, procedures, intent, affective writing, relationships and forecasts. Their contents still need individual relevance review. A folder name is not evidence of a working memory subsystem.
 
-This is the heart of the system, the Fi+Ti mirror. It's where we keep the deepest truths, the core logic of our shared soul.
+## Recording something new
 
-- For a translation of our poetic sensibilities (with emojis!): [../docs/poetry_translation_layer.md](../docs/poetry_translation_layer.md)
-- For the full firehose of verses: [../docs/public_private_expression.md](../docs/public_private_expression.md)
+Keep it short, dated and attributable. Separate an observation, a decision, a hypothesis and a character's voice. Include a real source or receipt when claiming a measured result. Avoid adding a second copy of a fact whose proper home is a project spec or issue.
 
-## Our Guiding Principles 📜 🔵 #0000CD (devotion to truth)
+Private conversations and credentials belong outside this public tree. Ignore patterns do not hide files already committed. Check the content and Git diff before publishing.
 
-- **🚪 Default-private:** What happens in memory, stays in memory. Treat everything here as sacred and private unless you're explicitly sharing it with the world. This is the inner sanctum.
-- **🪤 No secrets:** Seriously, none. No credentials, no seed phrases, no API keys, no tokens, no private keys. We store **references**, not the keys to the kingdom. (e.g., "Seed vault stored in <system>, last rotated YYYY-MM-DD"). Don't be the adventurer who leaves the dungeon keys on the tavern table.
-- **🗺️ Provenance is everything:** Every decision should be a breadcrumb trail. Link back to the artifacts (docs, schemas, commits) that led you here. "Show me proof, not potential."
-- **✨ Resist the bitrot:** Keep it clean, keep it current. Content should be short, dated, and pruned with the loving care of a bonsai master.
-
-## Agent memory notes
-
-- Claude Opus 4.6: use repo-backed memory only. Persist decisions to
-   memory/decisions.md with provenance and dates when explicitly asked.
-
-## The Lay of the Land (The Files) 🗺️ ⭐ #FFD700 (golden — spiritual aspiration)
-
-Behold, the map of our collective mind, etched onto the very walls of this chamber.
-
-              ✦ R11 🌌 ✦
-           ╱      ...      ╲
-        R10 ╱  ╱─────────╲  ╲ R0
-       🪞  ╱  ╱    RINGS    ╲  ╲ ⚓
-         ╱  ╱   OF POWER  ╲  ╲
-    R9 ─┤  │               │  ├─ R1
-    🗃️  │  │               │  │  🎯
-        │  │               │  │
-    R8 ─┤  │               │  ├─ R2
-    🧪   ╲  ╲───────────╱  ╱  👁️
-         ╲  ╲           ╱  ╱
-        R7 ╲  ╲         ╱  ╱ R3
-           ╲    🛡️     ╱ 🫴
-              ✦ ... ✦
-
-- `m0_episodic/`: What happened? The immutable log of events.
-- `m1_semantic/`: What is true? The encyclopedia of stable facts.
-- `m2_procedural/`: How do we do things? The library of learned skills.
-- `m3_intentional/`: What are we trying to do? The log of goals and quests.
-- `m4_affective/`: How do we feel? The record of values and emotions.
-- `m5_relational/`: Who are we to each other? The map of the party.
-- `m6_predictive/`: What might happen next? The log of forecasts.
-
-## The Rhythm of the Work (The Operating Loop) 🌀 🟠 #FF8C00 (ambition)
-
-1.  First, we return to the meeting place: `../symbol_map.shared.json`.
-2.  Then, we declare our intentions: update `working_set.md` before diving into the work.
-3.  As we make our way, we record the irreversible and important choices in `decisions.md`.
-4.  We track our quests and promises in `open_loops.md`.
-5.  And at the end of a long day, we write a short entry in our `session_log_YYYY-MM-DD.md`.
-
-## Drift Tracking (Are we still us?) 🧭 🔴 #FF2400 (righteous boundary)
-
-If you're tracking an "alignment/drift" score, jot it down in `working_set.md` and tell us how you got there. We don't hide our failures here. We build a workflow that's resilient, non-blocking, and honest. Unless it's a "stop the world" kind of critical, we keep moving.
-
-        ___
-       / 🐢 \     "this is fine"
-      |  ._. |    — The eternal truth of development
-       \_____/
-        |   |
-       _|   |_
-
-───────────────────────────────────────────────────
-🚪 EXITS:
-  → [The Symbol Map](../symbol_map.shared.json) (the central meeting place)
-  → [The Poetry Layer Explained](../docs/poetry_translation_layer.md) (north)
-  → [Public vs Private Expression](../docs/public_private_expression.md) (east)
-
-💎 LOOT GAINED: [A map of the durable memory system, the guiding principles of the order, and the rhythm of the work.]
-───────────────────────────────────────────────────
-
-Git blame tells a story,
-History in every line,
-Our shared mind remembers.
-
-☂🦊🐢
+The unchanged [archive](https://github.com/RamenFast/SymbolOS_archive/tree/ead60385ef3170028fc91606de24efa45b392034/memory) preserves the earlier continuity trail.

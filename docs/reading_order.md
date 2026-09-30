@@ -41,7 +41,7 @@ The archive is a photograph. This home can take another photograph without losin
 6. Record the source, time, failure and fix. Keep unsupported claims out of the map.
 7. Run `station-tree all` on changed living docs. Record the result and commit owned changes with a receipt.
 
-Ben's September 30 handoff permits GPT 6.1 Sol and Astra medium for this completion. It supersedes worker routing in the growth brief. This task starts no workers, changes no other repos and creates no app releases or renames.
+Worker models, tools and publication permissions come from the current request and applicable governance, not a historical handoff. This reading path does not grant them.
 
 ```text
         /\_/\

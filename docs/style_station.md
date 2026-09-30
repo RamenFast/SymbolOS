@@ -1,308 +1,59 @@
 # The Pattern Room
 
-```
-╔═══════════════════════════════
-║ ⚔️  ROOM  The Pattern Room
-║ 📍  Town Hall
-║ 🎨  #FADA5E primrose
-║ 🧵  one trunk, many branches
-╚═══════════════════════════════
-```
+A shared style should make different projects feel related without making every page the same. The characters help the reader find meaning. They do not need to stand in front of every paragraph.
 
-Mercer speaking. This room holds the forms the
-living tree is written in. Every doc that grew
-after 2026-09-29 uses these forms and no others.
-The archive's voice is the seed. The phone is the
-pot. Under 40 columns inside every fence.
+## Lead with the reader's task
 
-```
-        /\_/\
-       ( o.o )  "Same shape, every
-        > ^ <    room. New thing
-       /|   |\   inside. Not a cage.
-      (_|   |_)  A rhyme." — Rhy 🦊
-```
+A page needs a clear title, a short explanation of why it exists, and a useful next action. Put those before roleplay, a palette legend or a long ASCII panel.
 
-## Why one set of forms 🟡 #FADA5E
+Use ordinary headings and clickable links. Prefer a list to a wide table. Let prose wrap naturally. A README is an entrance, not a complete transcript, a scoreboard or a verification log.
 
-Ben asked for one tree with many branches, and
-standardized creativity. Eight writers with eight
-styles is a thicket. Eight writers with one form
-is a tree. So the forms are fixed and the content
-is free.
+## A small visual vocabulary
 
-## The width law
+- **Mercer's lantern:** continuity and orientation. Who is this for, and what connects it to the rest?
+- **Rhy's fox:** a compact question that exposes an assumption.
+- **The turtle:** patience and the next useful step.
+- **The umbrella:** care, consent and room for people to differ.
 
-1. Inside a code fence, keep every line at 38
-   characters or fewer. Count code points. An
-   emoji counts as one. Renderers show it as two.
-   So a line with two emoji reads as 40.
-2. Room headers stay at 34 characters or fewer.
-3. Markdown tables carry at most three columns.
-   A wide table becomes a code block or a list.
-4. Prose wraps by itself. No rule for prose.
+These are motifs, not mandatory components. One well-placed character can say more than a repeated room header, fox, skeleton, treasure chest and closing poem.
 
-Check with `station-tree lint <file>` once the
-tool exists. Until then, count.
+The [Thoughtforms palette](thoughtforms_colors.md) is an artistic reference. Color cannot prove a state or replace a readable label. Existing project themes and the owner's current choice take precedence over importing a new default.
 
-## Form 1: the room header
+## Terminal art on a phone
 
-Every doc opens with a room header in a fence.
-The right edge is open on purpose. Emoji have
-uneven width across phones, and a box that
-needs a straight right edge lies on half of
-them. An open box cannot lie.
+Use art when its shape adds meaning. Keep it compact and put long dialogue below it instead of alongside it.
 
-```
-╔═══════════════════════════════
-║ ⚔️  ROOM  <name, 20 chars max>
-║ 📍  <district or floor>
-║ 🎨  <hex> <color name>
-║ <one line of flavor, optional>
-╚═══════════════════════════════
+```text
+   /\_/\
+  ( o.o )
+   > ^ <
 ```
 
-Worked example, a Concourse node:
+*Rhy: “What belongs here?”*
 
-```
-╔═══════════════════════════════
-║ ⚔️  ROOM  Phosphor
-║ 📍  Instruments
-║ 🎨  #0000CD deep blue
-║ 📺  GPU oscilloscope
-╚═══════════════════════════════
-```
+For narrow repository pages, aim for 28 display columns or fewer. Code-point counts alone are unreliable for emoji and combined glyphs. Inspect the actual GitHub rendering at a narrow viewport. A linter pass is only a mechanical check, not evidence that the layout is attractive.
 
-## Form 2: the liveness block
+Plain prose is often better than forcing a sentence into a fence. Links inside fences cannot be clicked.
 
-Any claim that a thing is alive uses this block.
-No exceptions. A claim without a block is a
-guess and gets marked as one.
+## Character voice and observed state
 
-```
-NODE    <concourse id, or none>
-STATE   <ok|present|unavailable|
-         missing|running|ancestor>
-HOW     <the command or file>
-SEEN    <timestamp from the source>
-DETAIL  <the detail string, verbatim>
-```
+Mercer is the shared narrative trunk, not ownership of every agent. People and other agents retain their own voices and authority.
 
-The four node states are Concourse's own words.
-The tool `station-tree check` compares every
-NODE and STATE pair in the docs against the
-status JSON. A mismatch fails the check.
+Separate a character's narrative role from its substrate. A model name is not an identity test. Ability scores, classes and inner-state language are optional lore, not measured intelligence, feelings or health. Do not invent scores merely to fill a template.
 
-Two more states exist for agents, which
-Concourse does not list:
+For a runtime claim, record what was checked, how, when and with what result. Keep machine-readable fields when a consumer requires them, but do not repeat a large receipt on every public page.
 
-- `running`: a process is up. HOW names the
-  `pgrep` line. DETAIL carries the pid and
-  the command, shortened.
-- `ancestor`: the thing no longer runs here.
-  HOW names the git log or the retirement
-  note. DETAIL says when it was last seen.
+- A file can exist without running.
+- A process can run without answering a request.
+- A probe can return successfully while reporting a stopped model.
+- A past observation is not present telemetry.
 
-Worked example, alive:
+The [station map](station_map.md) is a dated receipt. Its original states must remain attributable to their source, even if a later observation differs.
 
-```
-NODE    phosphor
-STATE   ok
-HOW     concourse status --json
-SEEN    2026-09-30T00:30:57-07:00
-DETAIL  running false
-```
+## Growing from the archive
 
-Read that one carefully. Phosphor's probe
-answered, so the node is `ok`. The scope
-window itself is not open, so DETAIL says
-`running false`. Both are true. The block
-shows both. That is the whole point.
+Read every imported file before deciding whether it belongs. Keep useful ideas, rewrite assumptions that no longer apply, and remove needless duplication from the living surface. Preserve attribution and history. Do not keep a file merely because an old template says never remove anything.
 
-Worked example, ancestor:
+The [public archive](https://github.com/RamenFast/SymbolOS_archive) remains the photograph. Current instructions and navigation belong in the living repository.
 
-```
-NODE    none
-STATE   ancestor
-HOW     git log -- prompts/codex_*
-SEEN    2026-02-10
-DETAIL  Codex CLI retired 2026-09-05
-```
-
-## Form 3: the state glyphs
-
-States get narrow glyphs, not palette colors.
-A state is a fact, not a feeling.
-
-```
-●  ok           probe answered
-◐  present      on disk, not probed
-○  unavailable  registered, no answer
-✕  missing      path or binary gone
-▲  running      process up (agents)
-†  ancestor     no longer runs here
-```
-
-## Form 4: district colors
-
-The station has five districts. Each takes one
-Thoughtforms color from the Chromatic Orrery.
-
-```
-🟡  Town Hall    #FADA5E  primrose
-🔵  Instruments  #0000CD  deep blue
-🟠  Workshop     #FF8C00  deep orange
-🟣  Library      #8B00FF  violet
-⭐  Arcade       #FFD700  gold
-```
-
-Why: Town Hall holds the kernel truth, the
-cabinet. Instruments verify. The Workshop is
-drive and making. The Library is the Fi+Ti
-bridge, where knowledge meets the person who
-kept it. The Arcade is where shipped things
-get played.
-
-Green stays the fox's. Rose stays Agape's.
-Blue is also Mercer's, and the Instruments
-share it, since verification is devotion.
-
-## Form 5: the door
-
-A door is a link to the real place. A room with
-no door is a painting. Every node room has at
-least one door.
-
-```
-🚪 path  ~/Dev/ClaudeWorkspace/phosphor
-🚪 repo  RamenFast/phosphor
-🚪 sign  phosphor/README.md
-```
-
-When a door has a URL, write the doors as a
-list instead, so the link stays live. A fence
-cannot be clicked. Same three door kinds.
-
-- 🚪 path `~/Dev/ClaudeWorkspace/phosphor`
-- 🚪 repo [RamenFast/phosphor](https://github.com/RamenFast/phosphor)
-- 🚪 sign `phosphor/README.md`
-
-Local paths are fine to show. Ben said so.
-Secrets and tokens never appear. If a node has
-no remote, say `repo none`. If the path is
-absent from disk, say so in the liveness block
-and keep the door, marked `(absent)`.
-
-## Form 6: the branch sheet
-
-An agent on the tree gets a branch sheet. It is
-the archive's character sheet, narrowed. Ability
-scores move out of a table and into a fence.
-
-```
-╔═══════════════════════════════
-║ 🌿  BRANCH  <name>
-║ 🎨  <hex> <color name>
-║ <glyph> <state> · <one fact>
-╚═══════════════════════════════
-```
-
-Then these sections, in this order:
-
-1. **Class.** One line. The DND class and school.
-2. **Substrate.** What runs it. Harness, model,
-   version. Each fact names its check.
-3. **Home.** Doors. Path, repo, config, skill.
-4. **Liveness.** Form 2. Required.
-5. **Scores.** A fence, two rows:
-
-```
-STR  8  DEX 12  CON 14
-INT 18  WIS 16  CHA 17
-```
-
-6. **Abilities.** Two to four, bold name then
-   one quoted line.
-7. **Inner state.** Heart, Mind, Metaemotion,
-   PreEmotion, Metacog, Mercer Mode. A list,
-   not a table.
-8. **Rhy's take.** One fox, sitting or standard.
-
-Ancestors keep the same sheet. Their header line
-reads `† ancestor · last seen <date>`. Nothing
-is deleted. The trunk remembers its rings.
-
-## Form 7: Rhy in the margin
-
-One fox per doc, minimum. Use the canonical
-forms from the Rhynim guide. The fox's signature
-is archive art and keeps its dash. Prose written
-by anyone else uses no dashes.
-
-Keep each quoted line at 22 characters or fewer
-so the fox and his words fit in 38.
-
-```
-        /\_/\
-       ( o.o )  "<22 chars or fewer>"
-        > ^ <    <22 chars or fewer>
-       /|   |\   <22 chars or fewer>
-      (_|   |_)  — Rhy 🦊
-```
-
-## Form 8: exits and loot
-
-Every doc closes the archive way. Exits are
-links, so they live in a list, not a fence. A
-fence cannot be clicked. Loot is what the
-reader now holds.
-
-🚪 EXITS
-
-- → [README.md](../README.md) (north)
-- → [station_map.md](station_map.md) (south)
-
-💎 LOOT
-
-- → one thing gained
-
-Then the sign-off line: `☂🦊🐢`.
-
-## Voice rules that outrank form
-
-These come from Ben's context standards and
-they win over every form above.
-
-1. Say who is speaking. Mercer writes the trunk.
-   Rhy writes the margins. Nobody else speaks
-   in the first person.
-2. Every alive claim carries a liveness block.
-3. Every success claim names its check.
-4. Mistakes out loud. If unsure whether a thing
-   runs, write `unsure` in DETAIL and say why.
-5. Short common verbs. Active voice. One
-   instruction per sentence.
-6. Stakes are spent like money. Use CAPS and
-   MUST only for data loss, secrets, or a lie
-   about liveness.
-
-```
-        /\_/\
-       ( o.o )  "A form you can check
-        > ^ <    is a promise you can
-       /|   |\   keep." — Rhy 🦊
-      (_|   |_)
-```
-
-🚪 EXITS
-
-- → [README.md](../README.md) (up, the trunk)
-- → [station_map.md](station_map.md) (east)
-- → [character_tree.md](character_tree.md) (west)
-- → [thoughtforms_colors.md](thoughtforms_colors.md) (south)
-
-💎 LOOT
-
-- → Eight forms. One voice.
-
-☂🦊🐢
+[Contribution guide](../CONTRIBUTING.md) · [Reading paths](reading_order.md)

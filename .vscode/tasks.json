@@ -100,7 +100,7 @@
       "problemMatcher": []
     },
     {
-      "label": "SymbolOS: autorun (MAC prompt)",
+      "label": "Legacy Windows: manual SymbolOS startup (review script first)",
       "type": "shell",
       "command": "powershell",
       "args": [
@@ -113,11 +113,8 @@
       "problemMatcher": [],
       "presentation": {
         "reveal": "always",
-        "focus": true,
+        "focus": false,
         "panel": "new"
-      },
-      "runOptions": {
-        "runOn": "folderOpen"
       }
     },
     {
@@ -135,7 +132,7 @@
       "group": "build"
     },
     {
-      "label": "Mercer: status UI (auto on folder open)",
+      "label": "Legacy Windows: manual Mercer status UI",
       "type": "shell",
       "command": "powershell",
       "args": [

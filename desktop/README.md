@@ -1,59 +1,30 @@
-# SymbolOS Desktop TUI
+# Terminal explorer prototype
 
-A **ratatui**-based terminal UI that brings the SymbolOS dungeon explorer to the terminal.
-Reads `symbol_map.shared.json` and presents the ring model, symbol registry, agent roster,
-and d20 wisdom roller in a retro BBS aesthetic.
+This inherited Rust/ratatui application is an optional view of SymbolOS's older vocabulary, not the current station hub. Concourse remains the installed tool-discovery interface on Ben's machine.
 
-## Quick Start
+## What the source actually does
 
-```bash
-cd desktop
-cargo run
-```
+- Reads `schemaVersion` and `symbols` from a supplied JSON file.
+- Displays an eight-ring color list with a cycling highlight.
+- Lets you browse symbol names, meanings and tags.
+- Displays seven hardcoded historical character entries. Their HP gauges are illustrative constants, not live agent health.
+- Cycles through twenty fixed quotations when you press `r`. Despite the old d20 label, this is sequential, not random.
 
-Or point to a specific symbol map:
+There is no document-opening action and no live service polling. The twelve-ring design in other inherited documents is not what this implementation renders.
 
-```bash
-cargo run -- ../symbol_map.shared.json
-```
+## Source-level controls
 
-## Controls
+- Left/right or Tab: switch tabs.
+- Up/down or `j`/`k`: move through the symbol list.
+- `r`: next quotation.
+- `q` or Escape: quit.
 
-| Key | Action |
-|-----|--------|
-| `←`/`→` or `Tab` | Switch tabs |
-| `↑`/`↓` or `j`/`k` | Navigate lists |
-| `r` | Roll for wisdom |
-| `q` or `Esc` | Quit |
+The source searches for `symbol_map.shared.json` relative to its working directory or accepts a path as its first argument. A missing file produces an empty fallback, while malformed JSON returns an error.
 
-## Tabs
+## Review status
 
-1. **⚓ Rings** — Animated R0-R7 ring model with 1905 Thoughtforms colors
-2. **🗺 Symbols** — Full symbol registry from `symbol_map.shared.json` with detail panel
-3. **⚔ Party** — All 7 agents with HP gauges
-4. **🎲 Wisdom** — d20 wisdom roller with Rhy ASCII art
+The complete 606-line source was read during the September 30 curation. This is not a fresh build or terminal acceptance receipt. The manifest's `MIT` license declaration needs reconciliation with the repository's license history before distributing this component. Error paths after terminal setup also need a cleanup check before calling the tool robust.
 
-## Architecture
+Build inputs are in [Cargo.toml](Cargo.toml) and [Cargo.lock](Cargo.lock). Implementation is in [src/main.rs](src/main.rs). Keep this prototype out of the default quickstart until those questions are resolved.
 
-```
-desktop/
-├── Cargo.toml          Dependencies: ratatui, crossterm, serde, serde_json
-└── src/
-    └── main.rs         Single-file TUI (~500 lines, zero-dep on external services)
-```
-
-## Dependencies
-
-- **ratatui 0.29** — Terminal UI framework
-- **crossterm 0.28** — Cross-platform terminal manipulation
-- **serde 1 + serde_json 1** — JSON parsing for symbol_map.shared.json
-
-## Design
-
-Matches the Chromacore '97 BBS aesthetic:
-- Dark background (#080810 equivalent)
-- 1905 Thoughtforms color palette for rings
-- Monospace fonts throughout
-- Box-drawing characters for borders
-- Animated ring wheel that cycles every ~1s
-- Rhy fox ASCII art in the wisdom tab
+[Living entrance](../README.md)

@@ -1,73 +1,40 @@
 # Contributing to SymbolOS
 
-Welcome, fellow developer.
+SymbolOS is a shared way to keep context between people, agents and tools. This is the living repository. The [public archive](https://github.com/RamenFast/SymbolOS_archive) preserves the earlier work unchanged.
 
-SymbolOS is a symbolic operating system for human-AI alignment.
-This is a **limited developer release** — you're here because you were invited.
+Contributions are welcome. Start with the [entrance](README.md), choose a [reading path](docs/reading_order.md), and find a specific place where a clearer explanation, useful tool or checked example would help.
 
-## Your Privacy Umbrella ☂️
+## What belongs here
 
-SymbolOS respects privacy by design — yours included.
+- Shared vocabulary that makes a real interaction easier to understand.
+- Documentation a newcomer can follow without knowing a past conversation.
+- Tool integrations with an explicit purpose, prerequisites and observable result.
+- Characters and terminal art that guide the reader, rather than obscure the task.
 
-- **Your memory is yours.** If you fork this repo and add files to `memory/`, they stay private to your instance. We never collect, transmit, or read your local data.
-- **No telemetry.** SymbolOS has zero analytics, zero tracking, zero phone-home. Everything runs locally.
-- **Your agents are yours.** Customize `prompts/` freely. Your agent configurations are local.
-- **Consent-first.** Nothing leaves your machine unless you explicitly push it.
+The inherited tree is undergoing a file-by-file review. A file's presence is not a statement that its commands work today. Windows launchers, early model rosters and experimental interfaces need their own checks before use.
 
-## Repo Structure
+## Public means public
 
-| Directory | Visibility | Purpose |
-|-----------|-----------|---------|
-| `docs/` | **Public** | Specs, schemas, guides — safe to read, link, reference |
-| `web/` | **Public** | React UI — Dungeon Explorer + Lantern view |
-| `scripts/` | **Public** | Tooling — alignment reports, validators, setup scripts |
-| `prompts/` | **Public** | Agent system prompt configurations |
-| `memory/` | **Private** | Per-instance memory — session logs, working set, decisions |
-| `internal_docs/` | **Private** | Internal design notes — not for redistribution |
-| `extensions/` | **Public** | VS Code extensions |
+Every tracked file in this public repository can be read by visitors. Names such as `memory/`, `internal_docs/` or `private` do not restrict access. A `.gitignore` rule does not remove already committed content from history.
 
-## Getting Started
+Keep personal working notes, credentials and conversations outside the repository. Before a contribution, review both its content and what it sends to services. Do not claim that an inherited integration is local-only or telemetry-free without checking it.
 
-```bash
-# Clone and explore
-git clone https://github.com/RamenFast/SymbolOS.git
-cd SymbolOS
+## Send a change
 
-# Start the web UI
-cd web && npm install && npm run dev
+1. Open an issue or a small pull request explaining the reader's or user's problem.
+2. Keep the scope clear. Say which file or behavior changes and what stays untouched.
+3. Read every file you bring over. Adapt it for this repository instead of copying a past project's assumptions.
+4. State what you actually checked, including failures and untested platforms. Screenshots prove appearance, not a service's availability.
+5. Keep character lore separate from observed state. A dated receipt is not a live dashboard.
 
-# Optional: local LLM (requires llama.cpp + Vulkan GPU)
-# See docs/mcp_local_llm.md
-```
+For shared symbols, read both `symbol_map.shared.json` and `docs/symbol_map.md` before editing either. Their relationship needs to remain understandable to readers and tools.
 
-## Code of Conduct
+Use the project's documented checker only for the properties it measures. Passing a width or link check is not a substitute for reading the text.
 
-1. **Respect the umbrella.** Don't leak private content from `memory/` or `internal_docs/` if you have access.
-2. **Coherence over speed.** Quality matters more than velocity.
-3. **Memes are structural.** The playful layer is load-bearing, not decorative.
-4. **Ask once, then drop it.** Applies to humans too, not just agents.
+## Working together
 
-## How to Contribute
+Respect consent and ownership. A past prompt does not grant current permission to publish, delete, spend money, restart a service or move another person's windows. Be direct about uncertainty and leave a useful next step when blocked.
 
-- Open issues for bugs or ideas
-- PRs welcome — follow the workflow in [docs/workflow_guidelines.md](docs/workflow_guidelines.md)
-- Keep commits atomic and descriptive
-- Run `Mercer: doc alignment scan` before pushing if you modify symbols or schemas
+Licensing follows the applicable license files and existing attribution. Do not change another component's license merely to match a theme or preference.
 
-## Support
-
-If SymbolOS resonates with you:
-- **Star the repo** — it helps visibility
-- **CashApp**: $cashingthetags
-
-
-($BenMillward), idk where this came from??? -Ben
-
-
-
-— keeps the lights on and the GPU hot
-- **Share it** — with developers who care about human-AI alignment
-
----
-
-*"Under the umbrella, everything is kind."* ☂️🦊🐢
+The archive is a reference, not a deployment target. No contribution to this living repository should modify it.

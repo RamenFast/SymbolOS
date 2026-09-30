@@ -1,5 +1,11 @@
 # Living Home Asks
 
+## Reopened: personal curation and profile readability
+
+On September 30, Ben clarified that every imported file must first be personally checked for readability and relevance. The public archive stays unchanged. Ben also rejected the profile's appearance.
+
+The prior receipt below established selected link, width and publication checks, not whole-corpus acceptance. This request is **in progress**. Completion requires a per-file disposition for all 315 baseline paths, reviewed content rather than template reuse, and rendered checks of the public entrypoints. Do not mark this complete using only aggregate linter counts.
+
 ```text
 ╔═══════════════════════════════
 ║ ⚔️  ROOM  The Ask Ledger

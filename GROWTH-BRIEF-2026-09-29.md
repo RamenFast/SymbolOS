@@ -1,5 +1,7 @@
 # SymbolOS living tree: brief for the Fable coordinator
 
+> Historical coordination brief, retained for provenance. It is not current worker routing or publication permission. Ben's later review rejected copying the full archive without file-by-file curation. A registry's `present` state is not proof of liveness. Follow the current request and governance instead of the grants below.
+
 Written 2026-09-29 by Jcode (Opus 4.8 seat) for Ben. Ben's words, verbatim where it matters.
 
 ## What Ben asked
@@ -41,7 +43,7 @@ If you cannot finish, commit what you have on a branch named `growth/<date>`, pu
 - Edit only inside `~/Dev/ClaudeWorkspace/SymbolOS`. Commit as you go. Push to `origin main` when the winning condition holds.
 - Do not change GitHub repo settings, visibility, pins, or any other repo.
 - Do not move Sway windows or Thorium tabs.
-- Do not print tokens or secrets. The status JSON may contain local paths; those are fine (Ben: hardware and system detail is fine to expose).
+- Do not print tokens or secrets. The status JSON may contain local paths. Those are fine (Ben: hardware and system detail is fine to expose).
 - Sonnet 5.5 workers: as many as you want, each with a bounded task and a file list. GPT Astra at xhigh for the port work (turning archive concepts into things that read the live station). Keep implementation and review in separate workers.
 
 ## Why the truth matters here
