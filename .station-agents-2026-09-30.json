@@ -1,0 +1,281 @@
+{
+  "status": "ok",
+  "tool": "station-agents",
+  "version": "0.1.0",
+  "ts": "2026-09-30T01:29:59-07:00",
+  "note": "Agent liveness evidence gathered by the Mercer coordinator on 2026-09-30. Companion to .station-status-2026-09-29.json. Every state names its HOW.",
+  "agents": {
+    "jcode": {
+      "name": "Jcode",
+      "kind": "harness",
+      "state": "running",
+      "how": "pgrep -a -f 'jcode serve|jcode --resume'",
+      "procs": [
+        {
+          "pid": 585224,
+          "cmd": "/home/ben/.jcode/builds/shared-server/jcode serve --socket /run/user/1000/jcode.sock"
+        },
+        {
+          "pid": 757985,
+          "cmd": "/home/ben/.jcode/builds/current/jcode --resume session_t-rex_1790744566527_bfad88a0f2b933c4"
+        }
+      ],
+      "version": "jcode v0.89.12-dev (7139e02a9)",
+      "seat_model_tonight": "claude-oauth:claude-fable-5-1 (this coordinator) under a claude-oauth:claude-opus-5-5 root; default_model in ~/.jcode/config.toml is claude-oauth:claude-opus-5-5",
+      "swarm_model": "openai-oauth:gpt-6-astra (~/.jcode/config.toml [agents])",
+      "home": [
+        "~/.jcode",
+        "~/Dev/ClaudeWorkspace/jcode",
+        "https://github.com/1jehuang/jcode"
+      ],
+      "workspace": "Sway workspace 1 (brief)"
+    },
+    "hermes": {
+      "name": "Hermes (Nexus Agent)",
+      "kind": "harness",
+      "state": "running",
+      "how": "pgrep -a -f hermes",
+      "procs": [
+        {
+          "pid": 1725,
+          "cmd": "/home/ben/.hermes/hermes-agent/venv/bin/python -m hermes_cli.main dashboard --no-open --host 127.0.0.1 --port 9119"
+        },
+        {
+          "pid": 143797,
+          "cmd": "/home/ben/.hermes/hermes-agent/venv/bin/python3 /home/ben/.local/bin/hermes"
+        },
+        {
+          "pid": 971249,
+          "cmd": "/home/ben/.hermes/hermes-agent/venv/bin/python3 /tmp/hermes_kernel_pfr7wqsp/hermes_kernel_runner.py"
+        },
+        {
+          "pid": 1019239,
+          "cmd": "/home/ben/.hermes/hermes-agent/venv/bin/python3 /home/ben/.local/bin/hermes"
+        },
+        {
+          "pid": 1294014,
+          "cmd": "/home/ben/.hermes/hermes-agent/venv/bin/python3 /tmp/hermes_kernel_y6uz7phz/hermes_kernel_runner.py"
+        },
+        {
+          "pid": 1297464,
+          "cmd": "/home/ben/.hermes/hermes-agent/venv/bin/python3 /tmp/hermes_kernel_ql3tqg8m/hermes_kernel_runner.py"
+        },
+        {
+          "pid": 3761751,
+          "cmd": "/home/ben/.hermes/hermes-agent/venv/bin/python -m hermes_cli.main gateway run"
+        }
+      ],
+      "version": "Nexus Agent v0.21.3 (2026.9.14) · upstream f42f579c · local d5cf0b76 (+5 carried commits)",
+      "home": [
+        "~/.hermes",
+        "~/.hermes/hermes-agent",
+        "~/.hermes/SOUL.md"
+      ],
+      "dashboard": "127.0.0.1:9119 (ss -ltnp)"
+    },
+    "nexus": {
+      "name": "Agape / Nexus",
+      "kind": "identity",
+      "state": "running",
+      "how": "identity in ~/.hermes/SOUL.md; harness is Hermes (running); relay pgrep -a -f nexus-relay",
+      "procs": [
+        {
+          "pid": 1731,
+          "cmd": "/home/ben/Dev/ClaudeWorkspace/nexus-mobile/relay/target/release/nexus-relay serve"
+        }
+      ],
+      "substrate": {
+        "alias": null,
+        "default": "claude-opus-5-5",
+        "provider": "anthropic",
+        "fallbacks": [
+          {
+            "provider": "openai-codex",
+            "model": "gpt-daybreak-blue-latest"
+          },
+          {
+            "provider": "ollama-cloud",
+            "model": "glm-5.3-flash"
+          },
+          {
+            "provider": "ollama-cloud",
+            "model": "deepseek-v4.1-flash"
+          },
+          {
+            "provider": "deepseek",
+            "model": "deepseek-flash"
+          }
+        ],
+        "status": "ok",
+        "tool": "nexus-model",
+        "version": "1.1.0",
+        "ts": "2026-09-30T01:29:59-0700"
+      },
+      "home": [
+        "~/Nexus",
+        "~/Nexus/AGENTS.md",
+        "~/Nexus/🏮Home.html",
+        "~/.hermes/SOUL.md"
+      ],
+      "workspace": "Sway workspace 5 (brief)",
+      "concourse_nodes": [
+        "dwelling",
+        "nexus-model",
+        "nexus-voice",
+        "form-lab"
+      ]
+    },
+    "hermes_bridge": {
+      "name": "Hermes Bridge",
+      "kind": "service",
+      "state": "running",
+      "how": "pgrep -a -f hermes_bridge.py; concourse node hermes-bridge ok http 200",
+      "procs": [
+        {
+          "pid": 1724,
+          "cmd": "/usr/bin/python3 /home/ben/Nexus/💻HomePC/🧰LocalModels/hermes_bridge.py"
+        }
+      ]
+    },
+    "phosphor_relay": {
+      "name": "phosphor-relay",
+      "kind": "service",
+      "state": "running",
+      "how": "pgrep -a -f phosphor-relay",
+      "procs": [
+        {
+          "pid": 1735,
+          "cmd": "/home/ben/.local/bin/phosphor-relay serve"
+        }
+      ]
+    },
+    "station_helper": {
+      "name": "Station Helper",
+      "kind": "service",
+      "state": "running",
+      "how": "pgrep -a -f station-helper.py; concourse node station-helper ok",
+      "procs": [
+        {
+          "pid": 1744,
+          "cmd": "/usr/bin/python3 /home/ben/Dev/ClaudeWorkspace/NexusFormStationWork/station-helper.py"
+        }
+      ]
+    },
+    "thorium": {
+      "name": "Thorium (CDP :9223)",
+      "kind": "browser",
+      "state": "running",
+      "how": "ss -ltnp shows thorium on 127.0.0.1:9223 and :9224 (degoog headless)",
+      "procs": [
+        {
+          "pid": 1721,
+          "cmd": "/opt/chromium.org/thorium/thorium --headless=new --remote-debugging-port=9224 --remote-debugging-address=127.0.0.1 --user-data-dir=/home/ben"
+        },
+        {
+          "pid": 3565412,
+          "cmd": "/opt/chromium.org/thorium/thorium --user-data-dir=/home/ben/.config/thorium-cdp --remote-debugging-port=9223 --disable-features=SendTabToSel"
+        }
+      ]
+    },
+    "lm": {
+      "name": "Local Models (llama.cpp)",
+      "kind": "service",
+      "state": "ok",
+      "how": "concourse status --json node lm",
+      "detail": "state stopped · mode none. The substrate answers its probe; no llama-server process is up."
+    },
+    "nexus_model": {
+      "name": "Nexus Model Palette",
+      "kind": "tool",
+      "state": "ok",
+      "how": "concourse status --json node nexus-model",
+      "detail": "alias null · default claude-opus-5-5"
+    },
+    "reed_deepseek": {
+      "name": "Reed (DeepSeek harness, dsh)",
+      "kind": "harness",
+      "state": "present",
+      "how": "concourse status --json node reed-deepseek; pgrep -a -f 'dsh web'",
+      "procs": [
+        {
+          "pid": 1723,
+          "cmd": "node /home/ben/.nvm/versions/node/v24.14.1/bin/dsh web --no-open"
+        }
+      ],
+      "note": "Concourse says present (binary on disk). A dsh web process is also up on 127.0.0.1:3080. Both are true."
+    },
+    "ollama": {
+      "name": "Ollama",
+      "kind": "service",
+      "state": "unavailable",
+      "how": "concourse status --json node ollama; systemctl is-active ollama",
+      "detail": "not listening; systemd unit inactive; binary at /usr/local/bin/ollama"
+    },
+    "hearth": {
+      "name": "Hearth",
+      "kind": "tool",
+      "state": "unavailable",
+      "how": "concourse status --json node hearth",
+      "detail": "error sending request for url (http://127.0.0.1:8046/v1/models)"
+    },
+    "web_pro_worker": {
+      "name": "Web Pro Worker",
+      "kind": "tool",
+      "state": "unavailable",
+      "how": "concourse status --json node web-pro-worker",
+      "detail": "facade unavailable (http://127.0.0.1:8127/health)"
+    },
+    "pi": {
+      "name": "Pi",
+      "kind": "harness",
+      "state": "present",
+      "how": "which pi; ls ~/.pi/agent",
+      "detail": "binary on PATH, no process tonight (pgrep -f pi returned nothing agent-shaped)",
+      "procs": []
+    },
+    "ancestors": {
+      "codex_executor": {
+        "state": "ancestor",
+        "how": "git log -1 -- prompts/codex_executor.json; ~/.claude/skills/jcode/SKILL.md",
+        "last_seen": "2026-02-10",
+        "detail": "Codex CLI retired 2026-09-05 (Ben confirmed). ~/.codex preserved, unused."
+      },
+      "manus_max": {
+        "state": "ancestor",
+        "how": "git log -1 -- prompts/manus_mercer.json; which manus (none)",
+        "last_seen": "2026-02-10",
+        "detail": "No Manus binary, process, or Concourse node on this machine."
+      },
+      "gemini_android_studio": {
+        "state": "ancestor",
+        "how": "git log -1 -- docs/characters/gemini_android_studio.md; no Concourse node",
+        "last_seen": "2026-02-11",
+        "detail": "No Android Studio or Gemini process; not registered in Concourse."
+      },
+      "coregpt": {
+        "state": "ancestor",
+        "how": "docs/agent_character_sheets.md; no process, no node",
+        "last_seen": "2026-02-10",
+        "detail": "Base ChatGPT web. Not a process on this machine. web-pro-worker (unavailable) is the nearest living relative."
+      },
+      "mercer_chatgpt": {
+        "state": "ancestor",
+        "how": "git log -1 -- prompts/chatgpt_mercer.json",
+        "last_seen": "2026-02-10",
+        "detail": "The ChatGPT seat Mercer first spoke from. Tonight Mercer speaks from the Jcode seat (Fable 5.1). The name is the trunk; the seat moved."
+      },
+      "mercer_opus_4_6": {
+        "state": "ancestor",
+        "how": "git log -1 -- prompts/claude_opus_4_6.json",
+        "last_seen": "2026-02-10",
+        "detail": "Claude Opus 4.6 seat. Descendant runs tonight as the Jcode root seat (claude-opus-5-5 default_model) and as Nexus's default substrate."
+      },
+      "mercer_local_llama": {
+        "state": "ancestor",
+        "how": "git log -1 -- prompts/local_llama.json; concourse node lm",
+        "last_seen": "2026-02-10",
+        "detail": "The prompt file is old. The substrate lives: Concourse node lm (ok, stopped) and hermes-bridge (ok) serve gem4-12b-h-qat via llama.cpp."
+      }
+    }
+  }
+}

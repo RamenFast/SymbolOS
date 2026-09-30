@@ -1,0 +1,337 @@
+{
+  "status": "ok",
+  "tool": "concourse",
+  "version": "0.1.0",
+  "ts": "2026-09-30T01:24:09-07:00",
+  "generated_in_ms": 8728,
+  "nodes": [
+    {
+      "id": "cabinet",
+      "state": "present",
+      "version": null,
+      "detail": "on disk",
+      "latency_ms": 0
+    },
+    {
+      "id": "standard",
+      "state": "present",
+      "version": null,
+      "detail": "on disk",
+      "latency_ms": 0
+    },
+    {
+      "id": "station",
+      "state": "present",
+      "version": null,
+      "detail": "on disk",
+      "latency_ms": 0
+    },
+    {
+      "id": "concourse",
+      "state": "present",
+      "version": null,
+      "detail": "on disk",
+      "latency_ms": 0
+    },
+    {
+      "id": "dwelling",
+      "state": "present",
+      "version": null,
+      "detail": "on disk",
+      "latency_ms": 0
+    },
+    {
+      "id": "phosphor",
+      "state": "ok",
+      "version": "4.7.4",
+      "detail": "running false",
+      "latency_ms": 13
+    },
+    {
+      "id": "surveyor",
+      "state": "missing",
+      "version": null,
+      "detail": "~/Dev/ClaudeWorkspace/cartograph/zig-out/bin/surveyor: No such file or directory (os error 2)",
+      "latency_ms": 0
+    },
+    {
+      "id": "sysmon",
+      "state": "ok",
+      "version": "3.0.3",
+      "detail": "ok",
+      "latency_ms": 290
+    },
+    {
+      "id": "groundskeeper",
+      "state": "present",
+      "version": null,
+      "detail": "on disk",
+      "latency_ms": 0
+    },
+    {
+      "id": "wisp",
+      "state": "present",
+      "version": null,
+      "detail": "on disk",
+      "latency_ms": 0
+    },
+    {
+      "id": "lm",
+      "state": "ok",
+      "version": "1.0.0",
+      "detail": "state stopped · mode none · used_pct 16.7",
+      "latency_ms": 98
+    },
+    {
+      "id": "sdgen",
+      "state": "ok",
+      "version": "1.0.0",
+      "detail": "ok",
+      "latency_ms": 61
+    },
+    {
+      "id": "nexus-model",
+      "state": "ok",
+      "version": "1.1.0",
+      "detail": "alias null · default claude-opus-5-5",
+      "latency_ms": 147
+    },
+    {
+      "id": "form-lab",
+      "state": "present",
+      "version": null,
+      "detail": "on disk",
+      "latency_ms": 0
+    },
+    {
+      "id": "sudoplz",
+      "state": "ok",
+      "version": "0.4.0",
+      "detail": "ok",
+      "latency_ms": 108
+    },
+    {
+      "id": "blossom-shell",
+      "state": "present",
+      "version": null,
+      "detail": "on disk",
+      "latency_ms": 0
+    },
+    {
+      "id": "intercom",
+      "state": "ok",
+      "version": "0.1.0",
+      "detail": "tts_ready true · stt_ready true",
+      "latency_ms": 13
+    },
+    {
+      "id": "nexus-voice",
+      "state": "ok",
+      "version": "0.2.0",
+      "detail": "ready true · default nexus-anime · selected_device gpu",
+      "latency_ms": 99
+    },
+    {
+      "id": "hermes-bridge",
+      "state": "ok",
+      "version": null,
+      "detail": "http 200",
+      "latency_ms": 0
+    },
+    {
+      "id": "station-helper",
+      "state": "ok",
+      "version": "1.1.0",
+      "detail": "http 200",
+      "latency_ms": 0
+    },
+    {
+      "id": "ollama",
+      "state": "unavailable",
+      "version": null,
+      "detail": "not listening",
+      "latency_ms": 0
+    },
+    {
+      "id": "pkm",
+      "state": "present",
+      "version": null,
+      "detail": "on disk",
+      "latency_ms": 0
+    },
+    {
+      "id": "bookmarks",
+      "state": "present",
+      "version": null,
+      "detail": "on disk",
+      "latency_ms": 0
+    },
+    {
+      "id": "puzzlin",
+      "state": "present",
+      "version": null,
+      "detail": "on disk",
+      "latency_ms": 0
+    },
+    {
+      "id": "centogram",
+      "state": "present",
+      "version": null,
+      "detail": "on disk",
+      "latency_ms": 0
+    },
+    {
+      "id": "obsidian",
+      "state": "present",
+      "version": null,
+      "detail": "on disk",
+      "latency_ms": 0
+    },
+    {
+      "id": "holo-eye",
+      "state": "ok",
+      "version": "1.3.0",
+      "detail": "ok",
+      "latency_ms": 87
+    },
+    {
+      "id": "localgen",
+      "state": "missing",
+      "version": null,
+      "detail": "/home/ben/Dev/ClaudeWorkspace/LocalGeneration is missing",
+      "latency_ms": 0
+    },
+    {
+      "id": "gaming",
+      "state": "present",
+      "version": null,
+      "detail": "on disk",
+      "latency_ms": 0
+    },
+    {
+      "id": "mossgate",
+      "state": "ok",
+      "version": "0.1.0",
+      "detail": "ready true · room old_workshop",
+      "latency_ms": 13
+    },
+    {
+      "id": "iphone",
+      "state": "present",
+      "version": null,
+      "detail": "on disk",
+      "latency_ms": 0
+    },
+    {
+      "id": "thorium",
+      "state": "present",
+      "version": null,
+      "detail": "on disk",
+      "latency_ms": 0
+    },
+    {
+      "id": "greenhouse",
+      "state": "ok",
+      "version": "0.3.6",
+      "detail": "failed 0",
+      "latency_ms": 8720
+    },
+    {
+      "id": "blossom",
+      "state": "ok",
+      "version": "0.3.6",
+      "detail": "active blossom",
+      "latency_ms": 16
+    },
+    {
+      "id": "nightbloom",
+      "state": "ok",
+      "version": "0.3.6",
+      "detail": "running false",
+      "latency_ms": 19
+    },
+    {
+      "id": "bitrot",
+      "state": "ok",
+      "version": "0.1.0",
+      "detail": "ok",
+      "latency_ms": 53
+    },
+    {
+      "id": "degoog",
+      "state": "ok",
+      "version": null,
+      "detail": "http 200",
+      "latency_ms": 0
+    },
+    {
+      "id": "hearth",
+      "state": "unavailable",
+      "version": "0.1.0",
+      "detail": "error sending request for url (http://127.0.0.1:8046/v1/models)",
+      "latency_ms": 12
+    },
+    {
+      "id": "attention-beacon",
+      "state": "ok",
+      "version": "1.1.0",
+      "detail": "ok",
+      "latency_ms": 31
+    },
+    {
+      "id": "desktop-ui",
+      "state": "ok",
+      "version": "0.1.0",
+      "detail": "ok",
+      "latency_ms": 29
+    },
+    {
+      "id": "blender",
+      "state": "ok",
+      "version": "1.0.0",
+      "detail": "ok",
+      "latency_ms": 173
+    },
+    {
+      "id": "prime-agent-maintain",
+      "state": "ok",
+      "version": "0.1.0",
+      "detail": "ok",
+      "latency_ms": 19
+    },
+    {
+      "id": "reed-deepseek",
+      "state": "present",
+      "version": null,
+      "detail": "on disk",
+      "latency_ms": 0
+    },
+    {
+      "id": "web-pro-worker",
+      "state": "unavailable",
+      "version": "0.1.0",
+      "detail": "The facade is unavailable: error sending request for url (http://127.0.0.1:8127/health)",
+      "latency_ms": 29
+    },
+    {
+      "id": "zoombinis",
+      "state": "ok",
+      "version": "2.2.0",
+      "detail": "ok",
+      "latency_ms": 22
+    }
+  ],
+  "governance": {
+    "cabinet_path": "/home/ben/Dev/ClaudeWorkspace/AGENTS.md",
+    "present": true,
+    "readonly": true,
+    "sha256_12": "3629ef3a8221"
+  },
+  "skills": {
+    "claude": 34,
+    "hermes": 314,
+    "mirrors_paired": 8,
+    "mirrors_total": 10
+  },
+  "disk_free_bytes": 32830136320
+}
