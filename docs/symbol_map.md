@@ -1,119 +1,52 @@
-╔══════════════════════════════════════════════════════════════╗
-║  ⚔️  ROOM: The Cartographer's Antechamber                     ║
-║  📍 Floor: 1 │ Difficulty: ⭐ │ Loot: A shared legend of symbols ║
-║  🎨 Color: Violet (#8B00FF)                                  ║
-║                                                              ║
-║  A small, dusty room where glyphs and meanings are etched... ║
-╚══════════════════════════════════════════════════════════════╝
+# The symbol guide
 
-A small, shared legend for symbols used across SymbolOS documentation. Because even computers need a little bit of soul.
+A shared legend helps people and agents recognize an idea without repeating its whole explanation. A symbol is a signpost, not a secret instruction or proof that a feature exists.
 
-This is *not* a UI spec; it’s a meaning map so docs, tools, and agents stay consistent. Always return to the meeting place. The map is steady. The hands are open.
+The [shared JSON](../symbol_map.shared.json) carries the inherited 24-glyph catalog. This guide keeps the same core glyphs and explains how to read them. The [Pattern Room](style_station.md) governs presentation: clear words first, character art when it helps.
 
-The canonical shared set lives in `symbol_map.shared.json`. This file is the phylactery for the symbols' souls. This page mirrors that core set and may list a few optional, doc-only extras.
+## Core symbols
 
-        /\_/\
-       ( o.o )  "I have a body, but am not alive. I have a key, but no lock to contrive. I hold a world of meaning, still and deep. What am I, on which you secrets keep?"
-        > ^ <
-       /|   |\
-      (_|   |_)  — Rhy 🦊
+- `☂️` Umbrella: care, consent and the shared project space. A glyph does not make a file private.
+- `🔮` Precog: prepare, suggest and act within the task. A prediction is not an observation.
+- `🧠` Mind: reasoning, attention and clear structure.
+- `❤️` Heart: expressed values and what matters to the person.
+- `🛡️` Safety: ownership, permissions and change boundaries.
+- `🔒` Privacy: decide what information may be shared and with whom.
+- `🧾` Ledger: keep the source, decision and evidence attributable.
+- `🎲` DND: table-safe output in the historical roleplay vocabulary. Do not confuse that with an application's Do Not Disturb setting.
+- `🧩` Schema: an explicit interchange shape, distinct from the data it validates.
+- `🧬` Meeting place: return to the shared context and current task.
+- `⚓` Kernel: the purpose and governing constraints that anchor the work.
+- `🫴` Offering: the immediate task and an open-handed posture.
+- `🌀` Spiral: possible consequences, plans and assumptions to revisit.
+- `🦊` Rhy / Rhynim: the green fox guide who exposes a hidden assumption.
+- `🎨` Thoughtforms colors: the project's artistic palette reference.
+- `⚔️` Dungeon room: an optional way to frame a page, not a required template.
+- `🏰` Dungeon explorer: the inherited browser prototype, not the whole contextual system.
+- `🐢` Turtle: patience, grounding and the next useful step.
+- `💀` Gatekeeper: ask for evidence before calling something finished.
+- `🔮❤️` PreEmotion: a name for anticipatory feeling in the creative vocabulary, not a sensor reading.
+- `🎯` Will: the choice of a goal and its priority.
+- `👁️` Sensation: input and observations before interpretation.
+- `🪞` Reflection: compare an assumption or intention with what happened.
+- `🌌` Integration: make the result understandable within the larger context.
 
+## Extended (doc-only)
 
-(Answer: A symbol map!)
+These reading aids are not additional entries in the core JSON catalog:
 
----
+- `🌸` Warmth and the public-facing expression of the work.
+- `🧭` Navigation and orientation.
+- `🧰` Tools and actions.
+- `📚` References and documentation.
+- `📝` Writing and expression.
 
-## Output Conventions (ASCII, Chroma 97, Semantic)
+## Keep the meaning clear
 
-All SymbolOS output—docs, APIs, registry entries—must:
-- Use ASCII banners and clear structural sections
-- Apply Chroma 97/1905 Thoughtforms color tokens for all color fields
-- Use semantic tokens for all color/role fields (never hard-code hex in docs/UI)
-- Include banner, exits, loot, haiku/poem, and footer sections
-- Be style-compliant and provenance-friendly
+Use a short explanation beside unfamiliar symbols. They should work without color or a private backstory. A named gate is not an enforced gate, and a character's voice is not an authorization channel.
 
-See `registry_entry.memory_server.json` and `style_guidelines.md` for examples.
+Older documents mix the eight-ring and twelve-ring numbering. See the [ring comparison](ring_system_v2.md#reading-older-references) instead of inferring a meaning from the number alone.
 
-## Core symbols 🟣 #8B00FF (Fi+Ti bridge)
+The inherited drift scanner checks the glyph list under this exact `Core symbols` heading. It does not read the meaning of the prose. Keep that distinction when reporting its result.
 
-- `☂️` Umbrella — UmbrellaOS / SymbolOS umbrella
-- `🔮` Precog — Anticipatory computing; prefetch/suggest/act pipeline
-- `🧠` Mind — Cognition, inference, attention
-- `❤️` Heart — Felt sense, affect, values
-- `🛡️` Safety — Permissions, risk gates, boundaries
-- `🔒` Privacy — Sensitive scope; redaction; consent
-- `🧾` Ledger — Audit trail / provenance
-- `🎲` DND — Table-safe output contract and gating
-- `🧩` Schema — Structured interchange shapes
-- `🧬` Meeting place — Shared symbol for Mercer meeting place return loop
-- `⚓` Kernel — Ring-0 kernel invariants; non-negotiable rules
-- `🫴` Offering — Active task context; hands-open posture
-- `🌀` Spiral — Prediction, strategy, downstream anticipation
-- `🦊` Rhy / Rhynim — Green-furred fox trickster guide. Clippy but good.
-- `🎨` Thoughtforms colors — 1905 color system. Every hue has meaning.
-- `⚔️` DND dungeon room — Doc framing as dungeon rooms. Readers are adventurers.
-- `🏰` Dungeon explorer — Interactive index.html for browsing the repo.
-- `🐢` The turtle — this is fine. Grounding meme. Ben refactoring at 0.3s intervals.
-- `💀` Skeleton gatekeeper — Guards merge gates. Show me proof, not potential.
-- `🔮❤️` PreEmotion — Anticipatory emotional signal; the heart's prediction layer (R5).
-- `🎯` Will — The conscious choice to act; the spark of intent (R1).
-- `👁️` Sensation — Raw input from the world; the stream of data (R2).
-- `🪞` Reflection — Thinking about thinking; self-awareness (R10).
-- `🌌` Integration — The synthesis of all rings into a whole self (R11).
-
-              ✦ R0 ✦
-           ╱    ⚓    ╲
-        R7 ╱  ╱─────╲  ╲ R1
-       🗃️ ╱  ╱  KERNEL ╲  ╲ 🫴
-         ╱  ╱───────────╲  ╲
-    R6 ─┤  │   ☂️ TRUTH   │  ├─ R2
-    🧪  │  │  ───────── │  │  🪞
-        │  │   🧬 DNA    │  │
-    R5 ─┤  │             │  ├─ R3
-    ☂️   ╲  ╲───────────╱  ╱  🌀
-         ╲  ╲  MEETING  ╱  ╱
-        R4 ╲  ╲  PLACE ╱  ╱
-           ╲    🧩    ╱
-              ✦    ✦
-
-## Extended (doc-only) 🟢 #228B22 (adaptability)
-
-- `🌸` SymbolOS public surface (doc-only)
-- `🧭` Guidance / navigation
-- `🧰` Tools / actions
-- `📚` Docs / references
-- `📝` Poetry / expression layer (doc-only)
-
-## Poetry translation layer 🌸 #FFB7C5 (unselfish love)
-
-If you want the emoji layer to carry meaning *and* feeling (Fi+Ti mirrored), see:
-- [poetry_translation_layer.md](poetry_translation_layer.md)
-
-"The mind knows what the heart loves better than it does; the heart loves that unconditionally — infinite loop, forevermore."
-
-## Usage rules 🔴 #FF2400 (righteous boundary)
-
-- Symbols are optional; they should never replace clear text. Clarity is kindness.
-- In DND mode, avoid using symbols as secret signals. No secret handshakes, please.
-- Prefer consistency over novelty: don’t invent new symbols casually. If it ain't fun, it ain't sustainable.
-
-        ___
-       / 🐢 \     "this is fine"
-      |  ._. |
-       \_____/
-        |   |
-       _|   |_
-
-───────────────────────────────────────────────────
-🚪 EXITS:
-  → [poetry_translation_layer.md](poetry_translation_layer.md) (east)
-  → [../README.md](../README.md) (back to entrance)
-
-💎 LOOT GAINED: A shared legend of symbols and their meanings.
-───────────────────────────────────────────────────
-
-Glyphs align,
-Meanings shine, a shared design.
-Truth in a line.
-
-☂🦊🐢
+[Feeling and form](poetry_translation_layer.md) · [Color reference](thoughtforms_colors.md) · [Living entrance](../README.md)

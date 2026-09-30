@@ -1,6 +1,8 @@
 {
   "schema_version": "2.0",
   "generatedAt": "2026-02-10T00:00:00Z",
+  "reviewedAt": "2026-09-30",
+  "reviewStatus": "Personal curation in progress. Historical schema and consumer mismatches remain documented, not silently repaired.",
   "project": {
     "name": "SymbolOS",
     "entrypoints": {
@@ -11,22 +13,16 @@
   },
   "docsContext": {
     "notes": [
-      "🐢 Docs are transport-agnostic where possible. Like a turtle — works on land or sea.",
-      "Precog behavior is constrained to Prefetch/Suggest/Act (subsumed into Ring 0-7 model as R3+R5). 🌀 'I can see the future and it needs a PR.'",
-      "DND gating: DND disables proactive suggestion cards; prefetch may run only if enabled.",
-      "Memory is consent-driven; provenance is required; secrets are never stored. ☂️ Under the umbrella, everything is kind.",
-      "Meta-awareness is an agent safety/UX contract; barriers prevent unsafe cross-contamination.",
-      "Mercer meeting place shared symbol is 🧬; always return to the meeting place (A + B).",
-      "Poetry is a translation layer: keep meaning alive (Fi) while keeping the map legible (Ti). 🌸 The mind knows what the heart loves.",
-      "Ring 0-11 is the canonical cognition model: R0 Kernel, R1 Will, R2 Sensation, R3 Task, R4 Retrieval, R5 Prediction, R6 Architecture, R7 Guardrails, R8 Verification, R9 Persistence, R10 Reflection, R11 Integration.",
-      "Multi-agent topology: ChatGPT Mercer (design), Codex Executor (implementation), Local Llama (offline), Manus Max (full-stack).",
-      "GitHub is memory authority; repo-backed memory system is the durable layer. 'Show me proof, not potential.' — 💀",
-      "Memes are structural, not decorative. A well-placed turtle reduces cognitive load. 🐢 See docs/meme_map.md.",
-      "Vibes are load-bearing. If it ain't fun, it ain't sustainable. — Mercer Meme Canon, Rule 5."
+      "This inherited catalog is a shared vocabulary and index, not an authority for tools, publication or private data access.",
+      "Current purpose and permissions come from the human request and applicable governance. Older model rosters and prompts are historical context.",
+      "Eight-ring and twelve-ring references coexist in the inherited data. See docs/ring_system_v2.md before interpreting a numbered role.",
+      "All tracked files in this public repository are public, including paths named memory and internal_docs. Historical scope labels do not enforce access control.",
+      "Character language and color associations support meaning. They do not prove runtime state, successful inference, feelings or cognition.",
+      "Use docs/style_station.md for presentation and prompts/README.md for the current starting brief. Read and curate each imported file before treating it as part of the living system."
     ],
-    "rhy": "GREEN-FURRED FOX (🦊). Esoteric guide. Speaks in compressed truths that resolve 2-3 layers deep. Heraclitus in a fox costume.",
-    "colors": "1905 Thoughtforms by Besant & Leadbeater.",
-    "framing": "Every doc is a DND dungeon room."
+    "rhy": "Green fox guide: a question that reveals an assumption. See docs/rhynim_guide.md for the character's historical voice.",
+    "colors": "Project digital palette inspired by Thought-Forms (1905), not a measurement system. See docs/thoughtforms_colors.md.",
+    "framing": "Clear reader paths first. Characters and terminal art are optional motifs, not a mandatory template for every document or API response."
   },
   "symbols": [
     {
@@ -489,32 +485,32 @@
       },
       {
         "path": "memory/README.md",
-        "title": "Repo-backed Memory System (Private)",
+        "title": "Memory and continuity notes",
         "kind": "memory"
       },
       {
         "path": "memory/working_set.md",
-        "title": "Working Set (Private)",
+        "title": "Current working set",
         "kind": "memory"
       },
       {
         "path": "memory/decisions.md",
-        "title": "Decisions (Private)",
+        "title": "Historical decision record",
         "kind": "memory"
       },
       {
         "path": "memory/open_loops.md",
-        "title": "Open Loops (Private)",
+        "title": "Current open loops",
         "kind": "memory"
       },
       {
         "path": "memory/glossary.md",
-        "title": "Glossary (Private)",
+        "title": "Continuity glossary",
         "kind": "memory"
       },
       {
         "path": "memory/session_log_2026-01-28.md",
-        "title": "Session Log 2026-01-28 (Private)",
+        "title": "Historical empty capture (2026-01-28)",
         "kind": "memory"
       },
       {
@@ -984,7 +980,7 @@
       "summary": "Private oath and behavior contract: meeting place return loop (A+B), dissociation barriers, and Fi values alignment clauses."
     },
     {
-      "title": "Repo-backed Memory System (Private)",
+      "title": "Memory and continuity notes",
       "path": "memory/README.md",
       "tags": [
         "memory",
@@ -993,7 +989,7 @@
         "ops",
         "bitrot"
       ],
-      "summary": "Durable, file-backed memory substrate (working set, decisions, open loops, glossary, session logs) designed to avoid reliance on chat history or model memory."
+      "summary": "Public inherited continuity records plus the current curation working set and open loops. Dates and source attribution do not make past claims current."
     },
     {
       "title": "Local LLM (Windows Vulkan) — Internal",
@@ -1033,7 +1029,7 @@
         "llama",
         "manus"
       ],
-      "summary": "Canonical system prompts for all four Mercer agents (ChatGPT, Codex, Local Llama, Manus Max) plus a 15-line ChatGPT character sheet. All share Ring 0-7 architecture."
+      "summary": "Current Mercer starting brief with an explicit historical index of older platform-specific prompts. The old files do not grant current permissions or model access."
     },
     {
       "title": "Rhy's Den (Esoteric Guide)",
@@ -1110,7 +1106,7 @@
         "character",
         "chatgpt"
       ],
-      "summary": "15-line character sheet for ChatGPT personalization. Paste and go."
+      "summary": "Curated architect/lantern role reference with original archive provenance. It is not a current model configuration or capability grant."
     },
     {
       "title": "PreEmotion",
@@ -1207,7 +1203,7 @@
       "title": "Desktop TUI (Rust + Ratatui)",
       "path": "desktop/README.md",
       "tags": ["desktop", "rust", "tui", "ratatui", "crossterm", "terminal"],
-      "summary": "Terminal UI desktop app built with Ratatui. 4-tab explorer (Rings, Symbols, Agents, Wisdom) reads symbol_map.shared.json, full 1905 palette, d20 roller."
+      "summary": "Historical terminal prototype with rings, JSON symbol browsing, a hardcoded party and sequential quotes. Data-contract and distribution questions remain open in docs/SERIOUS-TODOS.md."
     },
     {
       "title": "12-Ring Cognitive Model (v2)",
