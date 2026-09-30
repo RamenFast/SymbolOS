@@ -179,6 +179,14 @@ least one door.
 🚪 sign  phosphor/README.md
 ```
 
+When a door has a URL, write the doors as a
+list instead, so the link stays live. A fence
+cannot be clicked. Same three door kinds.
+
+- 🚪 path `~/Dev/ClaudeWorkspace/phosphor`
+- 🚪 repo [RamenFast/phosphor](https://github.com/RamenFast/phosphor)
+- 🚪 sign `phosphor/README.md`
+
 Local paths are fine to show. Ben said so.
 Secrets and tokens never appear. If a node has
 no remote, say `repo none`. If the path is
@@ -245,16 +253,18 @@ so the fox and his words fit in 38.
 ## Form 8: exits and loot
 
 Every doc closes the archive way. Exits are
-links. Loot is what the reader now holds.
+links, so they live in a list, not a fence. A
+fence cannot be clicked. Loot is what the
+reader now holds.
 
-```
 🚪 EXITS
-  → <link>  (north)
-  → <link>  (south)
+
+- → [README.md](../README.md) (north)
+- → [station_map.md](station_map.md) (south)
 
 💎 LOOT
-  → <one thing gained>
-```
+
+- → one thing gained
 
 Then the sign-off line: `☂🦊🐢`.
 
@@ -284,15 +294,15 @@ they win over every form above.
       (_|   |_)
 ```
 
-```
 🚪 EXITS
-  → README.md  (up, the trunk)
-  → station_map.md  (east)
-  → character_tree.md  (west)
-  → thoughtforms_colors.md  (south)
+
+- → [README.md](../README.md) (up, the trunk)
+- → [station_map.md](station_map.md) (east)
+- → [character_tree.md](character_tree.md) (west)
+- → [thoughtforms_colors.md](thoughtforms_colors.md) (south)
 
 💎 LOOT
-  → Eight forms. One voice.
-```
+
+- → Eight forms. One voice.
 
 ☂🦊🐢

@@ -1,9 +1,11 @@
-//! station-tree: checks the grown SymbolOS docs.
+//! station-tree: checks and grows the SymbolOS docs.
 //! lint   fence width, header width, tables, dashes, semicolons
 //! check  NODE/STATE pairs against a concourse status JSON
 //! links  relative markdown links resolve on disk
 //! all    lint + check + links
+//! render write docs/station_map.md from nodes + status + seed
 //! schema the contract
+#![recursion_limit = "512"]
 use serde_json::{json, Value};
 use std::fs;
 use std::io::IsTerminal;
@@ -16,6 +18,230 @@ const FENCE_MAX: usize = 38;
 const HEADER_MAX: usize = 34;
 const TABLE_MAX_COLS: usize = 3;
 const AGENT_STATES: [&str; 3] = ["running", "ancestor", "present"];
+const DISTRICTS: [(&str, &str, &str, &str); 5] = [
+    ("Town Hall", "🟡", "#FADA5E", "primrose"),
+    ("Instruments", "🔵", "#0000CD", "deep blue"),
+    ("Workshop", "🟠", "#FF8C00", "deep orange"),
+    ("Library", "🟣", "#8B00FF", "violet"),
+    ("Arcade", "⭐", "#FFD700", "gold"),
+];
+
+fn glyph_for(state: &str) -> &'static str {
+    match state {
+        "ok" => "●",
+        "present" => "◐",
+        "unavailable" => "○",
+        "missing" => "✕",
+        "running" => "▲",
+        "ancestor" => "†",
+        _ => "?",
+    }
+}
+
+fn clip(s: &str, max: usize) -> String {
+    let n = s.chars().count();
+    if n <= max {
+        return s.to_string();
+    }
+    let mut out: String = s.chars().take(max - 1).collect();
+    out.push('…');
+    out
+}
+
+fn fox(lines: &[String]) -> String {
+    let l = |i: usize| lines.get(i).cloned().unwrap_or_default();
+    format!(
+        "```\n        /\\_/\\\n       ( o.o )  \"{}\n        > ^ <    {}\n       /|   |\\   {}\n      (_|   |_)  — Rhy 🦊\n```\n",
+        l(0), l(1), l(2)
+    )
+}
+
+fn header(kind: &str, name: &str, place: &str, hex: &str, color: &str, flavor: &str) -> String {
+    let mut s = String::from("```\n╔═══════════════════════════════\n");
+    s += &format!("║ ⚔️  {kind}  {}\n", clip(name, 20));
+    s += &format!("║ 📍  {place}\n");
+    s += &format!("║ 🎨  {hex} {color}\n");
+    if !flavor.is_empty() {
+        s += &format!("║ {}\n", clip(flavor, 30));
+    }
+    s += "╚═══════════════════════════════\n```\n";
+    s
+}
+
+fn render(want_json: bool) {
+    let root = repo_root(want_json);
+    let read = |p: &str| -> Value {
+        let full = root.join(p);
+        let t = fs::read_to_string(&full).unwrap_or_else(|e| fail(4, &format!("cannot read {}: {e}", full.display()), "run from the SymbolOS repo", want_json));
+        serde_json::from_str(&t).unwrap_or_else(|e| fail(4, &format!("{} is not JSON: {e}", full.display()), "fix the file", want_json))
+    };
+    let nodes = read(".station-nodes.json");
+    let status_path = find_status(want_json);
+    let status: Value = serde_json::from_str(&fs::read_to_string(&status_path).unwrap()).unwrap();
+    let seed = read("docs/station_map.seed.json");
+    let ts = status["ts"].as_str().unwrap_or("unknown");
+    let mut st = serde_json::Map::new();
+    for n in status["nodes"].as_array().cloned().unwrap_or_default() {
+        st.insert(n["id"].as_str().unwrap_or("").into(), n);
+    }
+    let node_list = nodes["nodes"].as_array().cloned().unwrap_or_default();
+    let mut tally: Vec<(&str, usize)> = vec![("ok", 0), ("present", 0), ("unavailable", 0), ("missing", 0)];
+    for n in &node_list {
+        let s = st[n["id"].as_str().unwrap()]["state"].as_str().unwrap_or("");
+        for t in tally.iter_mut() {
+            if t.0 == s { t.1 += 1; }
+        }
+    }
+    let strs = |v: &Value| -> Vec<String> { v.as_array().map(|a| a.iter().filter_map(|x| x.as_str().map(String::from)).collect()).unwrap_or_default() };
+
+    let mut out = String::new();
+    out += &format!("# {}\n\n", seed["title"].as_str().unwrap_or("The Station Map"));
+    out += &header("ROOM", "The Station Map", "Town Hall", "#FADA5E", "primrose", &format!("🗺  {} rooms, one photograph", node_list.len()));
+    out += "\n";
+    for l in strs(&seed["intro"]) {
+        out += &l;
+        out += "\n";
+    }
+    out += "\n";
+    out += &fox(&strs(&seed["rhy_open"]));
+    out += "\n## The legend\n\nStates are Concourse's own words. A state is\na fact, not a feeling.\n\n```\n";
+    out += "●  ok           probe answered\n◐  present      on disk, not probed\n○  unavailable  registered, no answer\n✕  missing      path or binary gone\n```\n\n";
+    out += "Districts take one Thoughtforms color each.\n\n```\n";
+    for (d, e, hex, name) in DISTRICTS {
+        out += &format!("{e}  {:<12} {hex}  {name}\n", d);
+    }
+    out += "```\n\n## The tally\n\n";
+    out += &format!("Photograph taken `{ts}`.\nSource `concourse status --json`.\n\n```\n");
+    for (s, c) in &tally {
+        out += &format!("{}  {:<12} {:>3}\n", glyph_for(s), s, c);
+    }
+    out += &format!("   {:<12} {:>3}\n```\n", "total", node_list.len());
+
+    for (d, e, hex, cname) in DISTRICTS {
+        let rooms: Vec<&Value> = node_list.iter().filter(|n| n["district"].as_str() == Some(d)).collect();
+        out += &format!("\n## {e} {d} `{hex}`\n\n");
+        if let Some(why) = seed["districts"][d].as_str() {
+            out += why;
+            out += "\n\n";
+        }
+        out += &format!("{} rooms.\n", rooms.len());
+        for n in rooms {
+            let id = n["id"].as_str().unwrap();
+            let s = &st[id];
+            let state = s["state"].as_str().unwrap_or("");
+            let sd = &seed["nodes"][id];
+            let name = sd["short"].as_str().unwrap_or(n["name"].as_str().unwrap_or(id));
+            let glyph = n["glyph"].as_str().unwrap_or("");
+            let flavor = format!("{glyph}  {}", sd["flavor"].as_str().unwrap_or(""));
+            out += &format!("\n### {} {} `{id}`\n\n", glyph_for(state), name);
+            out += &header("ROOM", name, d, hex, cname, &flavor);
+            out += "\n";
+            if let Some(says) = sd["says"].as_str() {
+                out += says;
+                out += "\n\n";
+            }
+            out += "```\n";
+            out += &format!("NODE    {id}\n");
+            if let Some(v) = s["version"].as_str() {
+                out += &format!("VER     {v}\n");
+            }
+            out += &format!("STATE   {state}\n");
+            out += "HOW     concourse status --json\n";
+            out += &format!("SEEN    {ts}\n");
+            let detail = s["detail"].as_str().unwrap_or("");
+            let dwidth = FENCE_MAX - 8;
+            let mut first = true;
+            let mut line = String::new();
+            let flush = |line: &mut String, out: &mut String, first: &mut bool| {
+                if !line.is_empty() {
+                    *out += &format!("{}{}\n", if *first { "DETAIL  " } else { "        " }, line);
+                    *first = false;
+                    line.clear();
+                }
+            };
+            for word in detail.split(' ') {
+                let wl = word.chars().count();
+                let ll = line.chars().count();
+                if ll > 0 && ll + 1 + wl > dwidth {
+                    flush(&mut line, &mut out, &mut first);
+                }
+                if wl > dwidth {
+                    let mut rest: Vec<char> = word.chars().collect();
+                    while rest.len() > dwidth {
+                        line = rest[..dwidth].iter().collect();
+                        rest = rest[dwidth..].to_vec();
+                        flush(&mut line, &mut out, &mut first);
+                    }
+                    line = rest.iter().collect();
+                    continue;
+                }
+                if !line.is_empty() {
+                    line.push(' ');
+                }
+                line += word;
+            }
+            flush(&mut line, &mut out, &mut first);
+            out += "```\n\n";
+            let path = n["path"].as_str();
+            let absent = path.map_or(false, |p| !Path::new(&expand(p)).exists());
+            if let Some(p) = path {
+                out += &format!("- 🚪 path `{p}`{}\n", if absent { " (absent)" } else { "" });
+            }
+            match sd["repo"].as_str() {
+                Some(r) if r != "none" => out += &format!("- 🚪 repo [{r}](https://github.com/{r})\n"),
+                _ => out += "- 🚪 repo none\n",
+            }
+            if let Some(sp) = n["signpost"].as_str() {
+                let sp_absent = !Path::new(&expand(sp)).exists();
+                out += &format!("- 🚪 sign `{sp}`{}\n", if sp_absent { " (absent)" } else { "" });
+            }
+            if let Some(note) = sd["note"].as_str() {
+                out += &format!("\n{note}\n");
+            }
+            if let Some(fix) = sd["fix"].as_str() {
+                out += &format!("\n{}  {fix}\n", glyph_for(state));
+            }
+        }
+    }
+    out += "\n";
+    out += &fox(&strs(&seed["rhy_close"]));
+    out += "\n🚪 EXITS\n\n- → [README.md](../README.md) (up, the trunk)\n- → [character_tree.md](character_tree.md) (west)\n- → [reading_order.md](reading_order.md) (east)\n- → [style_station.md](style_station.md) (south)\n\n💎 LOOT\n\n- → The station, as it answered.\n\n☂🦊🐢\n";
+
+    let target = root.join("docs/station_map.md");
+    fs::write(&target, &out).unwrap_or_else(|e| fail(4, &format!("cannot write {}: {e}", target.display()), "check permissions", want_json));
+    let mut m = envelope("ok");
+    m.insert("wrote".into(), json!(target.display().to_string()));
+    m.insert("source".into(), json!(status_path.display().to_string()));
+    m.insert("seen".into(), json!(ts));
+    m.insert("rooms".into(), json!(node_list.len()));
+    m.insert("tally".into(), json!(tally.iter().map(|(s, c)| (s.to_string(), json!(*c))).collect::<serde_json::Map<_, _>>()));
+    if want_json {
+        println!("{}", Value::Object(m));
+    } else {
+        println!("wrote {} ({} rooms, seen {ts})", target.display(), node_list.len());
+    }
+}
+
+fn expand(p: &str) -> String {
+    if let Some(rest) = p.strip_prefix("~/") {
+        if let Ok(h) = std::env::var("HOME") {
+            return format!("{h}/{rest}");
+        }
+    }
+    p.to_string()
+}
+
+fn repo_root(want_json: bool) -> PathBuf {
+    let mut dir = std::env::current_dir().unwrap_or_else(|_| PathBuf::from("."));
+    loop {
+        if dir.join(".station-nodes.json").exists() {
+            return dir;
+        }
+        if !dir.pop() {
+            fail(2, "not inside the SymbolOS repo (.station-nodes.json not found)", "cd ~/Dev/ClaudeWorkspace/SymbolOS", want_json)
+        }
+    }
+}
 
 struct Finding {
     file: String,
@@ -237,6 +463,7 @@ fn schema() -> Value {
             "check":  {"args": ["<file>..."], "flags": ["--json", "--status <file>", "--live"], "checks": ["node", "state", "block"]},
             "links":  {"args": ["<file>..."], "flags": ["--json"], "checks": ["link"]},
             "all":    {"args": ["<file>..."], "flags": ["--json", "--status <file>", "--live"]},
+            "render": {"args": [], "flags": ["--json"], "reads": [".station-nodes.json", ".station-status-*.json (newest)", "docs/station_map.seed.json"], "writes": "docs/station_map.md"},
             "schema": {"args": [], "flags": []}
         },
         "limits": {"fence_max": FENCE_MAX, "header_max": HEADER_MAX, "table_max_cols": TABLE_MAX_COLS},
@@ -246,6 +473,8 @@ fn schema() -> Value {
             "properties": {
                 "status": {"enum": ["ok", "error"]}, "tool": {"const": TOOL}, "version": {"type": "string"}, "ts": {"type": "string"},
                 "source": {"type": "string", "description": "status JSON path or the live command"},
+                "wrote": {"type": "string"}, "seen": {"type": "string"}, "rooms": {"type": "integer"},
+                "tally": {"type": "object", "additionalProperties": {"type": "integer"}},
                 "files": {"type": "integer"}, "nodes_seen": {"type": "integer"}, "nodes_total": {"type": "integer"},
                 "nodes_unmapped": {"type": "array", "items": {"type": "string"}},
                 "findings": {"type": "array", "items": {"type": "object", "additionalProperties": false,
@@ -259,7 +488,7 @@ fn schema() -> Value {
 }
 
 fn usage() -> &'static str {
-    "usage: station-tree <lint|check|links|all> <file>... [--json] [--status <file>] [--live]\n       station-tree schema"
+    "usage: station-tree <lint|check|links|all> <file>... [--json] [--status <file>] [--live]\n       station-tree render [--json]\n       station-tree schema"
 }
 
 fn main() {
@@ -284,6 +513,10 @@ fn main() {
         let mut m = envelope("ok");
         m.insert("schema".into(), schema());
         println!("{}", serde_json::to_string_pretty(&Value::Object(m)).unwrap());
+        return;
+    }
+    if verb == "render" {
+        render(want_json);
         return;
     }
     if !["lint", "check", "links", "all"].contains(&verb.as_str()) {
