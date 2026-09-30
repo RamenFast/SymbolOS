@@ -1,7 +1,9 @@
-# M1: Semantic Memory (The Scholar's Grimoire) 📚
+# M1: the scholar's reference
 
-This directory contains stable, factual knowledge about the world and the system itself. It answers the question: **What is true?**
+Semantic notes answer **what does this mean, and what supports it?** A useful entry names the concept, the source and any limits on when it applies.
 
-- **Content:** The symbol map, the glossary, schemas, the dungeon graph, canonical facts (e.g., "Rhy is a fox").
-- **Structure:** Key-value pairs, JSON objects, and structured data files. Highly organized and indexed for fast retrieval.
-- **Analogy:** A library's reference section.
+This folder contains inherited decisions and glossary material. It is not an automatically indexed encyclopedia. Prefer a link to the current definition over another drifting copy of it.
+
+Keep observation, interpretation and character lore distinct. A symbol's meaning can be shared without claiming that every old factual statement is still true.
+
+[Current glossary](../glossary.md) · [Memory guide](../README.md)

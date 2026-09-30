@@ -1,7 +1,9 @@
-# M4: Affective Memory (The Heart's Diary) ❤️
+# M4: the heart's notebook
 
-This directory stores values, feelings, and the emotional context of interactions. It answers the question: **How do we feel?**
+Affective writing keeps **what mattered to someone** alongside the technical record: expressed priorities, reservations, poetry and the tone of an interaction.
 
-- **Content:** The poetry file, user-expressed sentiments, vibe rules, and the results of meta-emotion self-checks.
-- **Structure:** Unstructured text, tagged with emotional valence (positive, negative, neutral) and intensity.
-- **Analogy:** A personal diary.
+Preserve a person's own words and attribution. Do not turn an inferred feeling into a measured fact, or assign emotional scores just to complete a template. Character voice can be meaningful without being telemetry.
+
+These inherited texts are public. Private diaries or new personal disclosures belong elsewhere unless their owner chooses to publish them.
+
+[Decision exercise](../../docs/demos/metaemotion_demo.md) · [Memory guide](../README.md)

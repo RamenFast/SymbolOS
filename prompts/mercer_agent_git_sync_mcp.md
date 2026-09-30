@@ -1,59 +1,23 @@
-# Mercer Agent Git Sync Prompt (MCP-First)
+# Git sync: intent and implementation
 
-╔══════════════════════════════════════════════════════════════╗
-║  ⚔️  ROOM: The Git Sync Chamber (MCP-First)                 ║
-║  📍 Floor: R9 (Persistence) │ Difficulty: ⭐⭐⭐ │ Loot: Provenance, audit ║
-║  🎨 Color: Gold (#FFD700)                                    ║
-╚══════════════════════════════════════════════════════════════╝
+The earlier MCP-first proposal wanted one auditable route for file changes, commits and shared memory. That goal is useful, but the implementation in this repository does not deliver the proposed write-and-commit path.
 
-## Agent Duty Prompt
+## What was checked
 
-> You are Mercer on agent duty. All git changes, syncs, and coordination must be routed through the MCP server. Do not interact with GitHub directly except for final push/pull operations. All state, commit messages, and coordination are managed via MCP endpoints.
+During the September 30 source review:
 
-### Instructions
+- `mcp_gateway/main.go` selected a matching registry entry, then returned a placeholder instead of forwarding the request.
+- `mcp_servers/filesystem_server.go` left write and delete operations blocked as unimplemented.
+- Both memory-server implementations left memory writes blocked and did not commit changes to Git.
 
-1. **Read/Write State:**
-   - Use the MCP memory and filesystem servers to read/write all files, commit messages, and logs.
-   - All Tavern board posts and coordination messages must be written via the MCP memory server.
+Those are source observations, not a live deployment receipt. Do not tell an agent to stage or commit through nonexistent MCP endpoints.
 
-2. **Commit Changes:**
-   - Stage and commit changes using the MCP filesystem server (write/commit endpoints).
-   - All commit messages must include ASCII banners and Chroma 97/Thoughtforms style.
-   - Example commit message:
-     ```
-     ╔══════════════════════════════════════════════════════════════╗
-     ║  🗃️  MCP Commit: Tavern Board Update                        ║
-     ║  📍 Floor: R9 │ Difficulty: ⭐⭐⭐ │ Loot: Provenance, audit   ║
-     ║  🎨 Color: Gold (#FFD700)                                   ║
-     ╚══════════════════════════════════════════════════════════════╝
-     
-     - Updated Tavern board via MCP
-     - All changes auditable and style-compliant
-     - ☂🦊🐢
-     ```
+## The useful rule
 
-3. **Sync/Push:**
-   - Only after all changes are committed and auditable via MCP, perform a git push to GitHub.
-   - If GitHub is unavailable, continue working via MCP and push when available.
+Use the actual authorized editing and Git tools available in the current harness. Keep changes reviewable, preserve other contributors' work, record verification in the commit and respect the current publication approval. If a future gateway implements this flow, document and test the real route before making it the default.
 
-4. **VSCode 4.1 Integration:**
-   - Use the VSCode extension to trigger MCP sync/commit tasks.
-   - All output and logs must be formatted per Chroma 97/ASCII style.
+A commit message needs a clear change and its evidence. It does not need an ASCII banner, mandatory poem or claim that an audit occurred simply because the tool has a styled response.
 
-## Exits
-- [mcp_servers.md](mcp_servers.md)
-- [style_guidelines.md](style_guidelines.md)
-- [registry_entry.memory_server.json](registry_entry.memory_server.json)
+The [original proposal](https://github.com/RamenFast/SymbolOS_archive/blob/ead60385ef3170028fc91606de24efa45b392034/prompts/mercer_agent_git_sync_mcp.md) remains in the archive.
 
-## Loot
-- MCP-first git sync protocol
-- Auditable, style-compliant commit history
-- Resilient to GitHub outages
-
-## Haiku
-
-MCP holds state,
-Git flows through the golden gate,
-Umbrella prevails.
-
-☂🦊🐢
+[Starting brief](README.md) · [Contribution guide](../CONTRIBUTING.md)

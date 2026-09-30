@@ -1,7 +1,9 @@
-# M3: Intentional Memory (The Quest Board) 🎯
+# M3: the quest board
 
-This directory tracks goals, objectives, and the overall mission. It answers the question: **What are we trying to do?**
+Intentional notes answer **what are we trying to do?** State the human goal, owner, next action and what would count as done.
 
-- **Content:** The working set, open loops, quest threads, and high-level project goals.
-- **Structure:** Hierarchical goals, from the main quest down to the smallest next action. Each goal has a status (active, blocked, complete).
-- **Analogy:** An adventurer's quest log.
+The nested working-set and open-loop files are inherited records, not today's task list. Use the [current working set](../working_set.md) and [current open loops](../open_loops.md) when returning to this review.
+
+A task marked approved in an old session is history, not standing permission to resume an unrelated deployment.
+
+[Memory guide](../README.md)

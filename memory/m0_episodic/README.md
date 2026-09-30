@@ -1,7 +1,9 @@
-# M0: Episodic Memory (The Scribe's Log) 🎞️
+# M0: the scribe's log
 
-This directory contains the immutable, append-only history of the system. It answers the question: **What happened?**
+Episodic notes answer **what happened?** Keep the event, time, source and observed result together.
 
-- **Content:** Session logs, command history, API call records, agent handoffs, Tavern Board messages.
-- **Structure:** Timestamped, sequential events. Each event has a unique ID, an agent source, and a payload.
-- **Analogy:** A court scribe's perfect, unchangeable transcript.
+The files here are inherited session records. Git preserves their versions, but it does not make a transcript perfect or technically immutable. A report that a test passed still needs its referenced evidence.
+
+Add corrections as dated observations rather than silently rewriting the meaning of a past event. Keep secrets and private conversations outside this public repository.
+
+[Memory guide](../README.md)
