@@ -43,7 +43,15 @@ station-tree check \
   docs/station_map.md --live --json
 ```
 
-The publication commit carries the final local check receipt. Standard pushes only are approved for this work. Remote equality and published README content are checked after pushing and recorded in the closing receipt commit.
+## Publication passed
+
+Content commit `33f9e3d` was pushed normally to `origin main` after the eight-document check passed with no findings. At **09:31 UTC**, fetch confirmed local and remote main equal, with a clean worktree. The public raw README returned HTTP 200 and matched local bytes exactly.
+
+README SHA-256: `e3eb4b78ce8550d8a8422e087848c164bd03074b832b5b5f961e7400aed62c7f`.
+
+The map was regenerated twice from the amended seed, with identical output. All 45 rooms now have a path or real repository door, including concrete paths for Nexus Model Palette, Hermes Bridge and Ollama. Private-door notes survive regeneration. [Final local check](evidence/local-check-2026-09-30.json).
+
+This closing receipt commit changes no README content. No force push was used.
 
 ## Limits and protected surfaces
 
