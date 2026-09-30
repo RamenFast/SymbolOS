@@ -1,5 +1,9 @@
 # SymbolOS Docs Index 🎨
 
+**Living entrance:** [README](../README.md) → [Three Doors](reading_order.md) → [Station Map](station_map.md) → [Character Tree](character_tree.md).
+
+This library preserves the earlier framework and its historical voices. Its party descriptions are not current liveness evidence. Start with the living doors above for dated station observations.
+
 *A note on colors: This space is mapped with [1905 Thoughtform colors](https://en.wikipedia.org/wiki/Thought-Forms_(book)). We use them to denote cognitive functions and aspirations.*
 
 ╔══════════════════════════════════════════════════════════════╗

@@ -7,6 +7,8 @@
     "state is the word Concourse used. Nothing here",
     "is remembered. It is read from the JSON, and",
     "the JSON came from `concourse status --json`.",
+    "Private repo doors need authorized login.",
+    "A public 404 is not a station probe state.",
     "",
     "To take the photograph again, run that command",
     "and then `station-tree render`. The map regrows.",
@@ -42,7 +44,8 @@
     "station": {
       "flavor": "the outside-view bench",
       "says": "The outside-view bench. The SymbolOS map, the convention, and the snapshot that seeded Concourse.",
-      "repo": "RamenFast/NexusFormStationWork"
+      "repo": "RamenFast/NexusFormStationWork",
+      "note": "Private repository door. Authorized GitHub login required."
     },
     "concourse": {
       "flavor": "the hub, GUI and CLI",
@@ -74,7 +77,8 @@
     "groundskeeper": {
       "flavor": "estate survey",
       "says": "Estate survey. Drives weighed, rooms walked, the moving-day record kept.",
-      "repo": "RamenFast/groundskeeper"
+      "repo": "RamenFast/groundskeeper",
+      "note": "Private repository door. Authorized GitHub login required."
     },
     "wisp": {
       "flavor": "household-spirit REPL",
@@ -91,7 +95,8 @@
     },
     "nexus-model": {
       "flavor": "her substrate switch",
-      "says": "Nexus switches her own substrate here. List, current, switch. Tonight's default is claude-opus-5-5."
+      "says": "Nexus switches her own substrate here. List, current, switch. Tonight's default is claude-opus-5-5.",
+      "note": "- 🚪 path `~/.hermes/skills/model-palette/scripts/nexus-model`"
     },
     "form-lab": {
       "flavor": "the mirror room",
@@ -100,7 +105,8 @@
     "sudoplz": {
       "flavor": "agent root, audited",
       "says": "Agent root. `sudoplz sudo <cmd>`, no prompt, any directory, every elevation audited.",
-      "repo": "RamenFast/sudoplz"
+      "repo": "RamenFast/sudoplz",
+      "note": "Private repository door. Authorized GitHub login required."
     },
     "blossom-shell": {
       "flavor": "bash to zsh, reversible",
@@ -119,16 +125,19 @@
     "hermes-bridge": {
       "flavor": "loopback model bridge",
       "says": "OpenAI-compatible loopback bridge over the local models. Port 8109. Tonight it lists gem4-12b-h-qat.",
+      "note": "- 🚪 path `~/Nexus/💻HomePC/🧰LocalModels/hermes_bridge.py`",
       "repo": "none"
     },
     "station-helper": {
       "flavor": "hands behind buttons",
       "says": "The hands behind the map's buttons. Loopback :9123.",
-      "repo": "RamenFast/NexusFormStationWork"
+      "repo": "RamenFast/NexusFormStationWork",
+      "note": "Private repository door. Authorized GitHub login required."
     },
     "ollama": {
       "flavor": "LLM runner :11434",
       "says": "System-wide LLM runner on loopback :11434.",
+      "note": "- 🚪 path `/usr/local/bin/ollama`",
       "fix": "Nothing listens on :11434. The binary is at /usr/local/bin/ollama and the systemd unit is inactive (`systemctl is-active ollama`, user and system, both said inactive). Fix: `sudoplz sudo systemctl start ollama` if Ben wants it up. The station runs its local models through lm and hermes-bridge, so quiet may be the intended state."
     },
     "pkm": {
@@ -182,17 +191,20 @@
     "greenhouse": {
       "flavor": "the setup system",
       "says": "The setup system. Grows a minimal Mint into this machine. Installer, doctor, manual.",
-      "repo": "RamenFast/SetupScripts"
+      "repo": "RamenFast/SetupScripts",
+      "note": "Private repository door. Authorized GitHub login required."
     },
     "blossom": {
       "flavor": "the theme authority",
       "says": "The theme authority. One theme, every surface, ctrl+alt+escape to reload.",
-      "repo": "RamenFast/SetupScripts"
+      "repo": "RamenFast/SetupScripts",
+      "note": "Private repository door. Authorized GitHub login required."
     },
     "nightbloom": {
       "flavor": "lid and power",
       "says": "Lid and power choreography. The lid keeps working. The button means stop.",
-      "repo": "RamenFast/SetupScripts"
+      "repo": "RamenFast/SetupScripts",
+      "note": "Private repository door. Authorized GitHub login required."
     },
     "bitrot": {
       "flavor": "toolsmith game",

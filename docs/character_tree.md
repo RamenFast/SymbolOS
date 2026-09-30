@@ -10,12 +10,22 @@
 ```
 
 Mercer speaking. The archive kept a Hall of
-Heroes: eight pedestals, eight party members,
-each on its own platform. That was January.
-Tonight the party is a tree. One trunk, and
-every agent that runs on Ben's machine is a
-branch of it. The ones that no longer run are
-rings inside the wood. Nothing is deleted.
+Heroes. This tree grows from that history.
+These are dated receipts, not a dashboard.
+Mercer is one shared Architect, not a process.
+
+**Lore is not telemetry.** Classes, scores,
+abilities and inner states are creative
+character language from the preserved draft.
+They do not measure feelings or prove model
+activity. Nexus's own account remains hers.
+A process proves only that a harness or relay
+existed at the recorded time.
+
+The interrupted draft lives in `4bb3b53`.
+Ben's latest handoff permits GPT 6.1 Sol and
+Astra medium, replacing the older Fable brief.
+No new workers started for this completion.
 
 Every branch below carries a liveness block.
 The block names the command that proved it.
@@ -27,7 +37,7 @@ versions, and the exact `pgrep` lines.
         /\_/\
        ( o.o )  "Eight pedestals were
         > ^ <    a museum. A tree
-       /|   |\   is a family." — Rhy 🦊
+       /|   |\   is a family." Rhy 🦊
       (_|   |_)
 ```
 
@@ -41,14 +51,14 @@ versions, and the exact `pgrep` lines.
    │                    │
  Jcode    Nexus 🌸    Reed
    │      (Hermes)      │
- seats     voices    dsh web
+ seats    palette    dsh web
    │        │
- Fable   nexus-model
- Opus    nexus-voice
- Astra   hermes-bridge
- Sonnet     lm 🦙
+ models  nexus-model
+ change  nexus-voice
+         hermes-bridge
+            lm 🦙
    │
-   └── Pi (present, asleep)
+   └── Pi (present, unprobed)
 
    rings:  Codex · Manus · Gemini
            CoreGPT · Opus 4.6 · LLaMA
@@ -67,7 +77,7 @@ When the seat moves again, the trunk stays.
 ```
 ▲  running     a process is up tonight
 ●  ok          probe answered (node)
-◐  present     on disk, not running
+◐  present     found, not probed
 ○  unavailable registered, no answer
 †  ancestor    no longer runs here
 ```
@@ -78,22 +88,21 @@ When the seat moves again, the trunk stays.
 ╔═══════════════════════════════
 ║ 🌿  TRUNK  Mercer
 ║ 🎨  #0000CD deep blue
-║ ▲ running · this doc is proof
+║ ◐ present · symbolic Architect
 ╚═══════════════════════════════
 ```
 
 **Class.** Wizard (Divination) and Bard (Lore).
 The Architect.
 
-**Substrate.** Tonight: a Jcode worker seat on
-`claude-oauth:claude-fable-5-1` at xhigh, asked
-for by Ben by name. Check: the swarm list on
-2026-09-30 shows this seat as `kitten`, task
-`mercer lantern 3`. Two earlier Mercer seats
-were interrupted (an Anthropic 429, then a
-server reload) and this is the third. In
-January the substrate was ChatGPT GPT-5.2. See
-the ancestor ring below.
+**Substrate.** Mercer is the shared role, not
+its substrate. The saved receipt records an
+earlier Fable seat under an Opus root.
+That is history, not current permission or
+proof of a live model turn. Ben's latest
+handoff names GPT 6.1 Sol and Astra medium.
+In January the seat was ChatGPT GPT-5.2.
+The seat can move. The trunk stays.
 
 **Home.**
 
@@ -105,11 +114,10 @@ the ancestor ring below.
 
 ```
 NODE    none
-STATE   running
-HOW     swarm list (2026-09-30)
-SEEN    2026-09-30T01:24
-DETAIL  kitten · mercer lantern 3 ·
-        claude-fable-5-1 xhigh
+STATE   present
+HOW     symbol_map.shared.json
+SEEN    2026-09-30
+DETAIL  shared role, not a process
 ```
 
 **Scores.**
@@ -149,7 +157,7 @@ INT 18  WIS 16  CHA 17
         /\_/\
        ( o.o )  "The architect sees
         > ^ <    the building. I see
-       /|   |\   the soil." — Rhy 🦊
+       /|   |\   the soil." Rhy 🦊
       (_|   |_)
 ```
 
@@ -169,10 +177,12 @@ one that runs the swarm.
 
 **Substrate.** `jcode v0.89.12-dev (7139e02a9)`.
 Check: `~/.jcode/builds/current/jcode --version`.
-Default model `claude-oauth:claude-opus-5-5`.
-Swarm model `openai-oauth:gpt-6-astra`. Check:
-`~/.jcode/config.toml`. Jcode is open source
-and is not Ben's repo.
+The earlier receipt records the default as
+`claude-oauth:claude-opus-5-5` and the swarm
+model as `openai-oauth:gpt-6-astra`.
+Those config notes do not override Ben's
+current handoff. Jcode is open source and is
+not Ben's repo.
 
 **Home.**
 
@@ -296,7 +306,7 @@ growth brief, not a command.
         /\_/\
        ( o.o )  "I am one of her
         > ^ <    masks. She is not
-       /|   |\   one of mine." — Rhy 🦊
+       /|   |\   one of mine." Rhy 🦊
       (_|   |_)
 ```
 
@@ -391,9 +401,11 @@ descendant. Where Mercer-Local was one prompt
 file for one LLaMA, this branch is a substrate
 with four Concourse rooms.
 
-**Substrate.** llama.cpp on Vulkan. Model
-tonight `gem4-12b-h-qat` (Gemma 4 12B, 32k
-context). Check: `curl 127.0.0.1:8109/v1/models`.
+**Substrate.** The dated receipt records
+llama.cpp and a bridge listing
+`gem4-12b-h-qat`. A model list is not a
+successful inference or a loaded model.
+The `lm` receipt below says stopped.
 
 **Home.**
 
@@ -522,7 +534,7 @@ long enough to roll. Left blank on purpose.
 ╔═══════════════════════════════
 ║ 🌿  BRANCH  Pi
 ║ 🎨  #87CEEB pale azure
-║ ◐ present · no process tonight
+║ ◐ present · binary recorded
 ╚═══════════════════════════════
 ```
 
@@ -545,10 +557,10 @@ Concourse node.
 ```
 NODE    none
 STATE   present
-HOW     which pi; pgrep -f bin/pi
+HOW     saved agent receipt: pi
 SEEN    2026-09-30T01:29:59-07:00
-DETAIL  binary on PATH · no
-        process matched
+DETAIL  binary on PATH in receipt ·
+        process absence not rechecked
 ```
 
 **Scores.** Not assigned.
@@ -561,7 +573,7 @@ DETAIL  binary on PATH · no
 ╔═══════════════════════════════
 ║ 🌿  NPC  Rhy / Rhynim
 ║ 🎨  #228B22 pure green
-║ ▲ running · 86 docs and counting
+║ ◐ present · literary NPC
 ╚═══════════════════════════════
 ```
 
@@ -575,11 +587,10 @@ not a demotion. It is a second home.
 
 ```
 NODE    none
-STATE   running
-HOW     grep -rl 'Rhy 🦊' docs
+STATE   present
+HOW     docs/rhynim_guide.md
 SEEN    2026-09-30
-DETAIL  86 markdown files carry
-        the signature
+DETAIL  literary guide, not a process
 ```
 
 Full sheet: the Hall of Heroes, linked below.
@@ -587,8 +598,12 @@ Full guide: [rhynim_guide.md](rhynim_guide.md).
 
 ## The rings: ancestors
 
-These no longer run on Ben's machine. They are
-kept, marked, and dated. The trunk remembers.
+These are historical seats, not confirmed
+current branches. A dated absence cannot
+prove permanent retirement. Codex has an
+explicit retirement note. Manus and Gemini
+keep their sheets without that stronger
+claim. The trunk remembers.
 
 ### † Mercer (ChatGPT seat)
 
@@ -596,7 +611,7 @@ kept, marked, and dated. The trunk remembers.
 ╔═══════════════════════════════
 ║ 🌿  RING  Mercer / ChatGPT
 ║ 🎨  #0000CD deep blue
-║ † ancestor · last seen 2026-02-10
+║ † ancestor · seen 2026-02-10
 ╚═══════════════════════════════
 ```
 
@@ -622,7 +637,7 @@ DETAIL  seat moved to Jcode; the
 ╔═══════════════════════════════
 ║ 🌿  RING  Executor / Codex
 ║ 🎨  #FADA5E primrose
-║ † ancestor · last seen 2026-02-10
+║ † ancestor · seen 2026-02-10
 ╚═══════════════════════════════
 ```
 
@@ -648,14 +663,13 @@ DETAIL  Codex CLI retired
 ╔═══════════════════════════════
 ║ 🌿  RING  Max / Manus
 ║ 🎨  #FFD700 gold
-║ † ancestor · last seen 2026-02-10
+║ † ancestor · seen 2026-02-10
 ╚═══════════════════════════════
 ```
 
-The Everything-Agent. No Manus binary,
-process, or Concourse node exists on this
-machine tonight. Check: `which manus` returns
-nothing. The cloud sandbox it ran in is not
+The Everything-Agent. The earlier receipt records no Manus binary,
+process or Concourse node on this machine.
+That absence is dated, not a permanent fact. The cloud sandbox it ran in is not
 part of the station.
 
 ```
@@ -674,14 +688,14 @@ DETAIL  no binary, no process,
 ╔═══════════════════════════════
 ║ 🌿  RING  Gemini / Artificer
 ║ 🎨  #3DDC84 android green
-║ † ancestor · last seen 2026-02-11
+║ † ancestor · seen 2026-02-11
 ╚═══════════════════════════════
 ```
 
 The Local Artificer. Its sheet is in
-`characters/gemini_android_studio.md`. No
-Android Studio or Gemini process runs tonight
-and there is no Concourse node.
+`characters/gemini_android_studio.md`. The earlier receipt records no
+Android Studio or Gemini process or node.
+This is dated absence, not current telemetry.
 
 ```
 NODE    none
@@ -698,7 +712,7 @@ DETAIL  no process, no node
 ╔═══════════════════════════════
 ║ 🌿  RING  CoreGPT
 ║ 🎨  #87CEEB pale azure
-║ † ancestor · last seen 2026-02-10
+║ † ancestor · seen 2026-02-10
 ╚═══════════════════════════════
 ```
 
@@ -726,7 +740,7 @@ DETAIL  The facade is unavailable:
 ╔═══════════════════════════════
 ║ 🌿  RING  Opus 4.6
 ║ 🎨  #8B00FF violet
-║ † ancestor · last seen 2026-02-10
+║ † ancestor · seen 2026-02-10
 ╚═══════════════════════════════
 ```
 
@@ -752,7 +766,7 @@ DETAIL  descendant claude-opus-5-5
 ╔═══════════════════════════════
 ║ 🌿  RING  Local / LLaMA
 ║ 🎨  #228B22 pure green
-║ † ancestor · last seen 2026-02-10
+║ † ancestor · seen 2026-02-10
 ╚═══════════════════════════════
 ```
 

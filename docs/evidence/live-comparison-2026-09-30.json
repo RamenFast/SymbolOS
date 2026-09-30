@@ -1,0 +1,1 @@
+{"files":1,"findings":[],"nodes_seen":45,"nodes_total":45,"nodes_unmapped":[],"source":"concourse status --json","status":"ok","tool":"station-tree","ts":"2026-09-30T02:22:50-07:00","version":"0.1.0"}

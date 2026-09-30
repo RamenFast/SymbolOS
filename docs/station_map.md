@@ -15,6 +15,8 @@ Every room below is a Concourse node. Every
 state is the word Concourse used. Nothing here
 is remembered. It is read from the JSON, and
 the JSON came from `concourse status --json`.
+Private repo doors need authorized login.
+A public 404 is not a station probe state.
 
 To take the photograph again, run that command
 and then `station-tree render`. The map regrows.
@@ -142,6 +144,8 @@ DETAIL  on disk
 - 🚪 path `~/Dev/ClaudeWorkspace/NexusFormStationWork`
 - 🚪 repo [RamenFast/NexusFormStationWork](https://github.com/RamenFast/NexusFormStationWork)
 - 🚪 sign `~/Dev/ClaudeWorkspace/NexusFormStationWork/STATION-MAP.md`
+
+Private repository door. Authorized GitHub login required.
 
 ### ◐ Concourse `concourse`
 
@@ -336,6 +340,8 @@ DETAIL  on disk
 - 🚪 path `~/Dev/ClaudeWorkspace/groundskeeper`
 - 🚪 repo [RamenFast/groundskeeper](https://github.com/RamenFast/groundskeeper)
 
+Private repository door. Authorized GitHub login required.
+
 ### ● degoog `degoog`
 
 ```
@@ -468,6 +474,8 @@ DETAIL  alias null · default
 
 - 🚪 repo none
 
+- 🚪 path `~/.hermes/skills/model-palette/scripts/nexus-model`
+
 ### ◐ Form-Diffusion Lab `form-lab`
 
 ```
@@ -517,6 +525,8 @@ DETAIL  ok
 - 🚪 path `~/Dev/ClaudeWorkspace/sudoplz`
 - 🚪 repo [RamenFast/sudoplz](https://github.com/RamenFast/sudoplz)
 - 🚪 sign `~/Dev/ClaudeWorkspace/sudoplz/docs/AGENTS.md`
+
+Private repository door. Authorized GitHub login required.
 
 ### ◐ Blossom Shell `blossom-shell`
 
@@ -619,6 +629,8 @@ DETAIL  http 200
 
 - 🚪 repo none
 
+- 🚪 path `~/Nexus/💻HomePC/🧰LocalModels/hermes_bridge.py`
+
 ### ● Station Helper `station-helper`
 
 ```
@@ -644,6 +656,8 @@ DETAIL  http 200
 - 🚪 path `~/Dev/ClaudeWorkspace/NexusFormStationWork`
 - 🚪 repo [RamenFast/NexusFormStationWork](https://github.com/RamenFast/NexusFormStationWork)
 
+Private repository door. Authorized GitHub login required.
+
 ### ○ Ollama `ollama`
 
 ```
@@ -666,6 +680,8 @@ DETAIL  not listening
 ```
 
 - 🚪 repo none
+
+- 🚪 path `/usr/local/bin/ollama`
 
 ○  Nothing listens on :11434. The binary is at /usr/local/bin/ollama and the systemd unit is inactive (`systemctl is-active ollama`, user and system, both said inactive). Fix: `sudoplz sudo systemctl start ollama` if Ben wants it up. The station runs its local models through lm and hermes-bridge, so quiet may be the intended state.
 
@@ -695,6 +711,8 @@ DETAIL  failed 0
 - 🚪 repo [RamenFast/SetupScripts](https://github.com/RamenFast/SetupScripts)
 - 🚪 sign `~/Dev/ClaudeWorkspace/SetupScripts/README.md`
 
+Private repository door. Authorized GitHub login required.
+
 ### ● blossom `blossom`
 
 ```
@@ -720,6 +738,8 @@ DETAIL  active blossom
 - 🚪 path `~/Dev/ClaudeWorkspace/SetupScripts/tools/blossom`
 - 🚪 repo [RamenFast/SetupScripts](https://github.com/RamenFast/SetupScripts)
 
+Private repository door. Authorized GitHub login required.
+
 ### ● nightbloom `nightbloom`
 
 ```
@@ -744,6 +764,8 @@ DETAIL  running false
 
 - 🚪 path `~/Dev/ClaudeWorkspace/SetupScripts/tools/nightbloom`
 - 🚪 repo [RamenFast/SetupScripts](https://github.com/RamenFast/SetupScripts)
+
+Private repository door. Authorized GitHub login required.
 
 ### ● Attention Beacon `attention-beacon`
 
