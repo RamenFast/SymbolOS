@@ -22,3 +22,6 @@ desktop/target/
 
 # Local secrets (never commit)
 .env.local
+
+# station-tree build output
+tools/station-tree/target/

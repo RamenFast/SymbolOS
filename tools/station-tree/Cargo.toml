@@ -1,0 +1,13 @@
+[package]
+name = "station-tree"
+version = "0.1.0"
+edition = "2021"
+license = "GPL-3.0-or-later"
+description = "Checks SymbolOS grown docs: fence width, liveness blocks against concourse status, links"
+
+[dependencies]
+serde_json = "1"
+
+[profile.release]
+strip = true
+lto = true
