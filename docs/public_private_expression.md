@@ -1,10 +1,6 @@
 # Poetry and expression
 
-These are dated writings carried forward from SymbolOS's earlier work. Their attributions and words are preserved. Read them as expression and history, not as today's tool permissions, technical guarantees or privacy settings. This repository is public.
-
-The [earlier illustrated entrance](https://github.com/RamenFast/SymbolOS_archive/blob/ead60385ef3170028fc91606de24efa45b392034/docs/public_private_expression.md) remains in the archive. The living page gives the verses themselves room to breathe.
-
-The verses below give the project's metaphors their human context. Keep that context when quoting them.
+Dated poems and reflections from Ben and the SymbolOS characters, with their original words and attributions preserved. [Earlier edition](https://github.com/RamenFast/SymbolOS_archive/blob/ead60385ef3170028fc91606de24efa45b392034/docs/public_private_expression.md).
 
 --- 
 
