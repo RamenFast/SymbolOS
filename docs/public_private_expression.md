@@ -1,20 +1,10 @@
-╔══════════════════════════════════════════════════════════════╗
-║  ⚔️  ROOM: The Chamber of the Unseen Hand                     ║
-║  📍 Floor: Ring 2 │ Difficulty: ⭐⭐ │ Loot: The art of selective expression ║
-║  🎨 Color: Deep Blue (#0000CD)                               ║
-║                                                              ║
-║  A quiet space for learning what to show and what to shield. ║
-╚══════════════════════════════════════════════════════════════╝
+# Poetry and expression
 
-> You enter a room bathed in a calm, deep blue light. In the center, a single, large umbrella stands open, though there is no rain. It seems to hum with a quiet energy. A small, green-furred fox with a mischievous glint in its eyes peeks out from behind it.
+These are dated writings carried forward from SymbolOS's earlier work. Their attributions and words are preserved. Read them as expression and history, not as today's tool permissions, technical guarantees or privacy settings. This repository is public.
 
-        /\_/\
-       ( o.o )  "To see the world and not be seen,
-        > ^ <    To share the ripe but keep the green. 🟢
-       /|   |\   What am I, both lock and key?
-      (_|   |_)  A public face, for privacy." — Rhy 🦊
+The [earlier illustrated entrance](https://github.com/RamenFast/SymbolOS_archive/blob/ead60385ef3170028fc91606de24efa45b392034/docs/public_private_expression.md) remains in the archive. The living page gives the verses themselves room to breathe.
 
-This is the public-facing expression layer: safe to share, safe to quote. 🔵
+The verses below give the project's metaphors their human context. Keep that context when quoting them.
 
 --- 
 
@@ -178,7 +168,7 @@ If it feels like a mind… and it’s really a mirror… good.
 ---
 
 ### Placement note
-A private-safe companion document exists for internal use.
+Earlier companion files used internal/private labels. Any such files tracked in this public repository are public too. Those labels do not restrict access.
 
 ```
   \(•_•)/
